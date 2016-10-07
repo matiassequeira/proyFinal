@@ -8,8 +8,8 @@ import org.antlr.v4.runtime.tree.*;
 import modelo.Config;
 import modelo.Menu;
 import modelo.MenuConfig;
-import parser.KConfig5Lexer;
-import parser.KConfig5Parser;
+import antlr.parserKConfigLexer;
+import antlr.parserKConfigParser;
 import parser.KConfigToClasses;
 import traductorASplot.ClassesToSplot;
 
@@ -36,18 +36,19 @@ public class Main {
 	
 		try {
 			
-			InputStream is= new FileInputStream("entrada 17-03.txt");
+			InputStream is= new FileInputStream("C:\\Users\\Matias\\git\\proyectoFinal\\KConfig\\"
+					+ "src\\entradasPrueba\\entrada 17-03.txt");
 
 			ANTLRInputStream input = new ANTLRInputStream(is);
 
 			// create a lexer that feeds off of input CharStream
-			KConfig5Lexer lexer = new KConfig5Lexer(input);
+			parserKConfigLexer lexer = new parserKConfigLexer(input);
 
 			// create a buffer of tokens pulled from the lexer
 			CommonTokenStream tokens = new CommonTokenStream(lexer);
 
 			// create a parser that feeds off the tokens buffer
-			KConfig5Parser parser = new KConfig5Parser(tokens);
+			parserKConfigParser parser = new parserKConfigParser(tokens);
 
 			ParseTree tree = parser.inicial(); // begin parsing at inicial rule
 

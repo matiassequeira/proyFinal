@@ -1,15 +1,7 @@
 package parser;
 import java.util.Stack;
-
-
-
-
-
-import org.antlr.v4.runtime.ParserRuleContext;
-import org.antlr.v4.runtime.misc.NotNull;
-import org.antlr.v4.runtime.tree.ErrorNode;
-import org.antlr.v4.runtime.tree.TerminalNode;
-
+import antlr.parserKConfigBaseListener;
+import antlr.parserKConfigParser;
 import main.Main;
 import modelo.Choice;
 import modelo.Config;
@@ -22,7 +14,7 @@ import modelo.Select;
 import modelo.Type;
 
 
-public class KConfigToClasses extends KConfig5BaseListener {
+public class KConfigToClasses extends parserKConfigBaseListener {
 	
 	private Config config;
 	
@@ -42,19 +34,19 @@ public class KConfigToClasses extends KConfig5BaseListener {
 	}
 	
 	
-	@Override public void exitInicial(KConfig5Parser.InicialContext ctx) {
+	@Override public void exitInicial(parserKConfigParser.InicialContext ctx) {
 		if(pila.size()==1)
 			Main.menu=(Menu)pila.pop();
 	}
 	
 	/*Menu*/
-	@Override public void enterMenu_menu_entry(KConfig5Parser.Menu_menu_entryContext ctx) { 
+	@Override public void enterMenu_menu_entry(parserKConfigParser.Menu_menu_entryContext ctx) { 
 		Menu aux = new Menu();
 		aux.setWordQuote(ctx.WORD_QUOTE().getText());
 		pila.push(aux);
 	}
 
-	@Override public void exitMenu_menu_entry(KConfig5Parser.Menu_menu_entryContext ctx) { 
+	@Override public void exitMenu_menu_entry(parserKConfigParser.Menu_menu_entryContext ctx) { 
 		Menu hijo = (Menu) pila.pop();
 		Object padre = pila.peek();
 		if( padre instanceof Menu){
@@ -67,7 +59,7 @@ public class KConfigToClasses extends KConfig5BaseListener {
 		
 		
 	}
-	@Override public void exitMenu_option(KConfig5Parser.Menu_optionContext ctx) {
+	@Override public void exitMenu_option(parserKConfigParser.Menu_optionContext ctx) {
 		Menu menu = (Menu)pila.peek();
 		if(menu.getDepends()==null)
 			menu.setDepends(ctx.expr().getText());
@@ -78,14 +70,14 @@ public class KConfigToClasses extends KConfig5BaseListener {
 	
 	
 	/*Config*/
-	@Override public void enterConfig_menu_entry(KConfig5Parser.Config_menu_entryContext ctx) {
+	@Override public void enterConfig_menu_entry(parserKConfigParser.Config_menu_entryContext ctx) {
 		
 		config = new Config();
 		config.setSymbol(ctx.SYMBOL().getText());
 		//System.out.println(config.getSymbol()+"entra a config");
 	}
 	
-	@Override public void exitConfig_menu_entry(KConfig5Parser.Config_menu_entryContext ctx) {
+	@Override public void exitConfig_menu_entry(parserKConfigParser.Config_menu_entryContext ctx) {
 		Object objeto =pila.peek();
 		
 		if( objeto instanceof Menu){
@@ -102,7 +94,7 @@ public class KConfigToClasses extends KConfig5BaseListener {
 		
 	}
 	
-	@Override public void exitConfig_op_type(KConfig5Parser.Config_op_typeContext ctx) {
+	@Override public void exitConfig_op_type(parserKConfigParser.Config_op_typeContext ctx) {
 		Type type = new Type();
 		type.setType(ctx.type().getText());
 		
@@ -116,7 +108,7 @@ public class KConfigToClasses extends KConfig5BaseListener {
 		config.setType(type);
 	}
 	
-	@Override public void exitConfig_op_depends(KConfig5Parser.Config_op_dependsContext ctx) { 
+	@Override public void exitConfig_op_depends(parserKConfigParser.Config_op_dependsContext ctx) { 
 		if(config.getDepends()==null)
 			config.setDepends(ctx.expr().getText());
 		else{
@@ -124,7 +116,7 @@ public class KConfigToClasses extends KConfig5BaseListener {
 		}
 	}
 	
-	@Override public void exitConfig_op_prompt(KConfig5Parser.Config_op_promptContext ctx) {
+	@Override public void exitConfig_op_prompt(parserKConfigParser.Config_op_promptContext ctx) {
 		Prompt prompt = new Prompt();
 		prompt.setPrompt(ctx.WORD_QUOTE().getText());
 		if (ctx.if_expr()!=null)
@@ -132,7 +124,7 @@ public class KConfigToClasses extends KConfig5BaseListener {
 		config.setPrompt(prompt);	
 	}
 	
-	@Override public void exitConfig_op_select(KConfig5Parser.Config_op_selectContext ctx) { 
+	@Override public void exitConfig_op_select(parserKConfigParser.Config_op_selectContext ctx) { 
 		Select select =new Select();
 		if(ctx.if_expr()!=null)
 			select.setCondicionIf(ctx.if_expr().getChild(1).getText());
@@ -140,7 +132,7 @@ public class KConfigToClasses extends KConfig5BaseListener {
 		config.setSelect(select);
 	}
 	
-	@Override public void exitConfig_op_default(KConfig5Parser.Config_op_defaultContext ctx) {
+	@Override public void exitConfig_op_default(parserKConfigParser.Config_op_defaultContext ctx) {
 		
 		if(ctx.DEFAULT().getText().equals("default")){
 			
@@ -195,7 +187,7 @@ public class KConfigToClasses extends KConfig5BaseListener {
 	
 	
 	/*Choice */
-	@Override public void enterChoice_menu_entry(KConfig5Parser.Choice_menu_entryContext ctx) {
+	@Override public void enterChoice_menu_entry(parserKConfigParser.Choice_menu_entryContext ctx) {
 		//System.out.println("entra choice");
 		choice= new Choice();
 		pila.push(choice);
@@ -207,7 +199,7 @@ public class KConfigToClasses extends KConfig5BaseListener {
 		choice.setType(new Type());
 	}
 	
-	@Override public void exitChoice_menu_entry(KConfig5Parser.Choice_menu_entryContext ctx) {
+	@Override public void exitChoice_menu_entry(parserKConfigParser.Choice_menu_entryContext ctx) {
 		Choice auxChoice;
 //System.out.println("sale choice");
 		auxChoice= (Choice) pila.pop();
@@ -238,7 +230,7 @@ public class KConfigToClasses extends KConfig5BaseListener {
 		
 	}
 	
-	@Override public void exitChoice_op_type(KConfig5Parser.Choice_op_typeContext ctx) {
+	@Override public void exitChoice_op_type(parserKConfigParser.Choice_op_typeContext ctx) {
 		Type type = choice.getType();
 		type.setType(ctx.type_choice().getText());
 		
@@ -252,7 +244,7 @@ public class KConfigToClasses extends KConfig5BaseListener {
 		
 	}
 	
-	@Override public void exitChoice_op_depends(KConfig5Parser.Choice_op_dependsContext ctx) {
+	@Override public void exitChoice_op_depends(parserKConfigParser.Choice_op_dependsContext ctx) {
 		if(choice.getDepends()==null)
 			choice.setDepends(ctx.expr().getText());
 		else{
@@ -262,7 +254,7 @@ public class KConfigToClasses extends KConfig5BaseListener {
 	}
 
 	
-	@Override public void exitChoice_op_prompt(KConfig5Parser.Choice_op_promptContext ctx) {
+	@Override public void exitChoice_op_prompt(parserKConfigParser.Choice_op_promptContext ctx) {
 		Prompt prompt = new Prompt();
 		prompt.setPrompt(ctx.WORD_QUOTE().getText());
 		if (ctx.if_expr()!=null)
@@ -271,7 +263,7 @@ public class KConfigToClasses extends KConfig5BaseListener {
 		//System.out.println(prompt.getPrompt());
 	}
 	
-	@Override public void exitChoice_op_default(KConfig5Parser.Choice_op_defaultContext ctx) { 
+	@Override public void exitChoice_op_default(parserKConfigParser.Choice_op_defaultContext ctx) { 
 		//System.out.println("defaulttt");
 		if(ctx.DEFAULT().getText().equals("default")){
 			
@@ -321,7 +313,7 @@ public class KConfigToClasses extends KConfig5BaseListener {
 	}
 	
 	
-	@Override public void exitChoice_op_optional(KConfig5Parser.Choice_op_optionalContext ctx) { 
+	@Override public void exitChoice_op_optional(parserKConfigParser.Choice_op_optionalContext ctx) { 
 		choice.setOptional(true);
 	}
 	
@@ -329,7 +321,7 @@ public class KConfigToClasses extends KConfig5BaseListener {
 	
 	/* Menu Config */
 	
-	@Override public void enterMenuconfig_menu_entry(KConfig5Parser.Menuconfig_menu_entryContext ctx) {
+	@Override public void enterMenuconfig_menu_entry(parserKConfigParser.Menuconfig_menu_entryContext ctx) {
 		menuConfig = new MenuConfig();
 		
 		pila.push(menuConfig);
@@ -340,7 +332,7 @@ public class KConfigToClasses extends KConfig5BaseListener {
 		
 	}
 	
-	@Override public void exitMenuconfig_menu_entry(KConfig5Parser.Menuconfig_menu_entryContext ctx) {
+	@Override public void exitMenuconfig_menu_entry(parserKConfigParser.Menuconfig_menu_entryContext ctx) {
 		MenuConfig menuConfigAux;
 		//bandera_if_menuConfig=false;
 		menuConfigAux= (MenuConfig) pila.pop();
@@ -357,7 +349,7 @@ public class KConfigToClasses extends KConfig5BaseListener {
 		
 	}
 
-	@Override public void exitMenuconfig_op_type(KConfig5Parser.Menuconfig_op_typeContext ctx) { 
+	@Override public void exitMenuconfig_op_type(parserKConfigParser.Menuconfig_op_typeContext ctx) { 
 		Type type = new Type();
 		type.setType(ctx.type().getText());
 		
@@ -370,7 +362,7 @@ public class KConfigToClasses extends KConfig5BaseListener {
 		menuConfig.setType(type);
 	}
 	
-	@Override public void exitMenuconfig_op_depends(KConfig5Parser.Menuconfig_op_dependsContext ctx) {
+	@Override public void exitMenuconfig_op_depends(parserKConfigParser.Menuconfig_op_dependsContext ctx) {
 		if(menuConfig.getDepends()==null)
 			menuConfig.setDepends(ctx.expr().getText());
 		else{
@@ -378,7 +370,7 @@ public class KConfigToClasses extends KConfig5BaseListener {
 		}
 	}
 	
-	@Override public void exitMenuconfig_op_select(KConfig5Parser.Menuconfig_op_selectContext ctx) {
+	@Override public void exitMenuconfig_op_select(parserKConfigParser.Menuconfig_op_selectContext ctx) {
 		Select select =new Select();
 		if(ctx.if_expr()!=null)
 			select.setCondicionIf(ctx.if_expr().getChild(1).getText());
@@ -386,7 +378,7 @@ public class KConfigToClasses extends KConfig5BaseListener {
 		menuConfig.setSelect(select);
 	}
 	
-	@Override public void exitMenuconfig_op_default(KConfig5Parser.Menuconfig_op_defaultContext ctx) { 
+	@Override public void exitMenuconfig_op_default(parserKConfigParser.Menuconfig_op_defaultContext ctx) { 
 		if(ctx.DEFAULT().getText().equals("default")){
 			
 			if(ctx.if_expr()!=null){
@@ -401,7 +393,7 @@ public class KConfigToClasses extends KConfig5BaseListener {
 		}
 	}
 	
-	@Override public void exitMenuconfig_op_prompt(KConfig5Parser.Menuconfig_op_promptContext ctx) { 
+	@Override public void exitMenuconfig_op_prompt(parserKConfigParser.Menuconfig_op_promptContext ctx) { 
 		Prompt prompt = new Prompt();
 		prompt.setPrompt(ctx.WORD_QUOTE().getText());
 		if (ctx.if_expr()!=null)
@@ -413,14 +405,14 @@ public class KConfigToClasses extends KConfig5BaseListener {
 
 
 	/* If */
-	@Override public void enterIf_menu_entry(KConfig5Parser.If_menu_entryContext ctx) {
+	@Override public void enterIf_menu_entry(parserKConfigParser.If_menu_entryContext ctx) {
 		
 		/*if_menu = new If();
 		if_menu.setSymbol(ctx.SYMBOL().getText());
 		pila.push(if_menu);*/
 	}
 
-	@Override public void exitIf_menu_entry(KConfig5Parser.If_menu_entryContext ctx) { 
+	@Override public void exitIf_menu_entry(parserKConfigParser.If_menu_entryContext ctx) { 
 		If ifAux= (If)pila.pop();
 		Object objeto =pila.peek();
 			if(objeto instanceof MenuConfig){
@@ -438,14 +430,14 @@ public class KConfigToClasses extends KConfig5BaseListener {
 			}
 		
 	}
-	@Override public void enterIf_symbol(KConfig5Parser.If_symbolContext ctx) {
+	@Override public void enterIf_symbol(parserKConfigParser.If_symbolContext ctx) {
 		
 		if_menu = new If();
 		if_menu.setSymbol(ctx.SYMBOL().getText());
 		pila.push(if_menu);
 	}
 
-	@Override public void enterIf_symbol_negado(KConfig5Parser.If_symbol_negadoContext ctx) {
+	@Override public void enterIf_symbol_negado(parserKConfigParser.If_symbol_negadoContext ctx) {
 		if_menu = new If();
 		if_menu.setSymbol(ctx.SYMBOL().getText());
 		if_menu.setNegado(true);
