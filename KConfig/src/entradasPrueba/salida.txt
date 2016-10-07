@@ -1,0 +1,7 @@
+BUG
+BUGa
+Problema1
+BUG
+BUG
+Problema2
+java.util.ConcurrentModificationException

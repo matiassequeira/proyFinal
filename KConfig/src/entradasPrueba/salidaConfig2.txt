@@ -1,0 +1,10 @@
+:r Menu Padre(_r) 
+	:o THERMAL(_r_6) 
+		:o THERMAL_HWMON(_r_6_7) 
+		:m "Default Thermal governor"(_r_6_8) 
+			:g (_r_6_8_9) [1,1] 
+				: THERMAL_DEFAULT_GOV_STEP_WISE(_r_6_8_9_10) 
+				: THERMAL_DEFAULT_GOV_FAIR_SHARE(_r_6_8_9_11) 
+ 
+~_r_6_7 or _r_6
+

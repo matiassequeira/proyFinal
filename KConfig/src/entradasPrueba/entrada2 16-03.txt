@@ -1,0 +1,26 @@
+config A
+	bool "config A"
+if A
+config H
+	bool
+menu "Primer menu"
+config B
+	bool "config B"
+config C
+	bool "config C"
+	select A
+if C
+config G
+	bool
+endif
+endmenu
+
+if H
+config I
+	bool
+endif
+endif
+menuconfig Z
+	bool
+config F
+	bool "config F"

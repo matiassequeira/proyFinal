@@ -1,0 +1,6 @@
+config GENERIC_BUG
+	def_bool y
+	select BUG
+config BUG
+	bool "BUG() support" if EXPERT
+	default y

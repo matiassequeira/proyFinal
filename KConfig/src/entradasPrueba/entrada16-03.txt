@@ -1,0 +1,230 @@
+menu "General setup"
+config BROKEN
+	bool
+config BROKEN_ON_SMP
+	bool
+	depends on BROKEN
+	default y
+config INIT_ENV_ARG_LIMIT
+	int
+	default 32 if !UML
+	default 128 if UML
+config CROSS_COMPILE
+	string "Cross-compiler tool prefix"
+config COMPILE_TEST
+	bool "Compile also drivers which will not load"
+	default n
+config LOCALVERSION
+	string "Local version - append to kernel release"
+config LOCALVERSION_AUTO
+	bool "Automatically append version information to the version string"
+	default y
+config HAVE_KERNEL_GZIP
+	bool
+config HAVE_KERNEL_BZIP2
+	bool
+config HAVE_KERNEL_LZMA
+	bool
+config HAVE_KERNEL_XZ
+	bool
+config HAVE_KERNEL_LZO
+	bool
+config HAVE_KERNEL_LZ4
+	bool
+choice
+	prompt "Kernel compression mode"
+	default KERNEL_GZIP
+	depends on HAVE_KERNEL_GZIP || HAVE_KERNEL_BZIP2 || HAVE_KERNEL_LZMA || HAVE_KERNEL_XZ || HAVE_KERNEL_LZO || HAVE_KERNEL_LZ4
+config KERNEL_GZIP
+	bool "Gzip"
+	depends on HAVE_KERNEL_GZIP
+config KERNEL_BZIP2
+	bool "Bzip2"
+	depends on HAVE_KERNEL_BZIP2
+config KERNEL_LZMA
+	bool "LZMA"
+	depends on HAVE_KERNEL_LZMA
+config KERNEL_XZ
+	bool "XZ"
+	depends on HAVE_KERNEL_XZ
+config KERNEL_LZO
+	bool "LZO"
+	depends on HAVE_KERNEL_LZO
+config KERNEL_LZ4
+	bool "LZ4"
+	depends on HAVE_KERNEL_LZ4
+endchoice
+config DEFAULT_HOSTNAME
+	string "Default hostname"
+	default "(none)"
+config SWAP
+	bool "Support for paging of anonymous memory (swap)"
+	default y
+config SYSVIPC
+	bool "System V IPC"
+config SYSVIPC_SYSCTL
+	bool
+	depends on SYSVIPC
+	depends on SYSCTL
+	default y
+config POSIX_MQUEUE
+	bool "POSIX Message Queues"
+config POSIX_MQUEUE_SYSCTL
+	bool
+	depends on POSIX_MQUEUE
+	depends on SYSCTL
+	default y
+config SYSCTL
+	bool "Enable process_vm_readv/writev syscalls"
+	default y
+config FHANDLE
+	bool "open by fhandle syscalls"
+	select EXPORTFS
+config USELIB
+	bool "uselib syscall"
+	default y
+config AUDIT
+	bool "Auditing support"
+config HAVE_ARCH_AUDITSYSCALL
+	bool
+config AUDITSYSCALL
+	bool "Enable system-call auditing support"
+	depends on AUDIT && HAVE_ARCH_AUDITSYSCALL
+	default y if SECURITY_SELINUX
+config AUDIT_WATCH
+	def_bool y
+	depends on AUDITSYSCALL
+config AUDIT_TREE
+	def_bool y
+	depends on AUDITSYSCALL
+
+#################### https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/plain/kernel/irq/Kconfig
+menu "IRQ subsystem"
+config MAY_HAVE_SPARSE_IRQ
+       bool
+config GENERIC_IRQ_LEGACY
+       bool
+config GENERIC_IRQ_PROBE
+	bool
+config GENERIC_IRQ_SHOW
+       bool
+config GENERIC_IRQ_SHOW_LEVEL
+       bool
+config GENERIC_IRQ_LEGACY_ALLOC_HWIRQ
+       bool
+config GENERIC_PENDING_IRQ
+	bool
+config AUTO_IRQ_AFFINITY
+       bool
+config HARDIRQS_SW_RESEND
+       bool
+config IRQ_PREFLOW_FASTEOI
+       bool
+config IRQ_EDGE_EOI_HANDLER
+       bool
+config GENERIC_IRQ_CHIP
+       bool
+       select IRQ_DOMAIN
+config IRQ_DOMAIN
+	bool
+config IRQ_DOMAIN_HIERARCHY
+	bool
+	select IRQ_DOMAIN
+config GENERIC_MSI_IRQ
+	bool
+config GENERIC_MSI_IRQ_DOMAIN
+	bool
+	select IRQ_DOMAIN_HIERARCHY
+	select GENERIC_MSI_IRQ
+config HANDLE_DOMAIN_IRQ
+	bool
+config IRQ_DOMAIN_DEBUG
+	bool "Expose hardware/virtual IRQ mapping via debugfs"
+	depends on IRQ_DOMAIN
+config IRQ_FORCED_THREADING
+       bool
+config SPARSE_IRQ
+	bool "Support sparse irq numbering" if MAY_HAVE_SPARSE_IRQ
+endmenu
+config CLOCKSOURCE_WATCHDOG
+	bool
+config ARCH_CLOCKSOURCE_DATA
+	bool
+config CLOCKSOURCE_VALIDATE_LAST_CYCLE
+	bool
+config GENERIC_TIME_VSYSCALL
+	bool
+config GENERIC_TIME_VSYSCALL_OLD
+	bool
+config ARCH_USES_GETTIMEOFFSET
+	bool
+config GENERIC_CLOCKEVENTS
+	bool
+config ARCH_HAS_TICK_BROADCAST
+	bool
+config GENERIC_CLOCKEVENTS_BROADCAST
+	bool
+	depends on GENERIC_CLOCKEVENTS
+config GENERIC_CLOCKEVENTS_MIN_ADJUST
+	bool
+config GENERIC_CMOS_UPDATE
+	bool
+if GENERIC_CLOCKEVENTS
+menu "Timers subsystem"
+config TICK_ONESHOT
+	bool
+config NO_HZ_COMMON
+	bool
+	depends on !ARCH_USES_GETTIMEOFFSET && GENERIC_CLOCKEVENTS
+	select TICK_ONESHOT
+choice
+	prompt "Timer tick handling"
+	default NO_HZ_IDLE if NO_HZ
+config HZ_PERIODIC
+	bool "Periodic timer ticks (constant rate, no dynticks)"
+config NO_HZ_IDLE
+	bool "Idle dynticks system (tickless idle)"
+	depends on !ARCH_USES_GETTIMEOFFSET && GENERIC_CLOCKEVENTS
+	select NO_HZ_COMMON
+config NO_HZ_FULL
+	bool "Full dynticks system (tickless)"
+	depends on !ARCH_USES_GETTIMEOFFSET && GENERIC_CLOCKEVENTS
+	
+endchoice
+config NO_HZ_FULL_ALL
+       bool "Full dynticks system on all CPUs by default (except CPU 0)"
+       depends on NO_HZ_FULL
+config NO_HZ_FULL_SYSIDLE
+	bool "Detect full-system idle state for full dynticks system"
+	depends on NO_HZ_FULL
+	default n
+config NO_HZ_FULL_SYSIDLE_SMALL
+	int "Number of CPUs above which large-system approach is used"
+	depends on NO_HZ_FULL_SYSIDLE
+	range 1 NR_CPUS
+	default 8
+config NO_HZ
+	bool "Old Idle dynticks config"
+	depends on !ARCH_USES_GETTIMEOFFSET && GENERIC_CLOCKEVENTS	
+config HIGH_RES_TIMERS
+	bool "High Resolution Timer Support"
+	depends on !ARCH_USES_GETTIMEOFFSET && GENERIC_CLOCKEVENTS
+	
+endmenu
+endif
+menu "CPU/Task time and stats accounting"
+config VIRT_CPU_ACCOUNTING
+	bool
+choice
+	prompt "Cputime accounting"
+	default TICK_CPU_ACCOUNTING if !PPC64
+	default VIRT_CPU_ACCOUNTING_NATIVE if PPC64
+config TICK_CPU_ACCOUNTING
+	bool "Simple tick based cputime accounting"
+config VIRT_CPU_ACCOUNTING_NATIVE
+	bool "Deterministic task and CPU time accounting"	
+config VIRT_CPU_ACCOUNTING_GEN
+	bool "Full dynticks CPU time accounting"
+endchoice
+endmenu 
+endmenu

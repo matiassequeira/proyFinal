@@ -1,0 +1,16 @@
+:r Menu Padre(_r) 
+	:m X86_HT(_r_6) 
+	:m MMU(_r_7) 
+	:m SBUS(_r_8) 
+	:o W1(_r_9) 
+		:o W1_CON(_r_9_10) 
+		:m "1-wire Bus Masters"(_r_9_11) 
+			:o W1_MASTER_DS2490(_r_9_11_12) 
+			:o W1_MASTER_DS2482(_r_9_11_13) 
+			:o W1_MASTER_MXC(_r_9_11_14) 
+ 
+~_r_9_11_13 or _r_6
+~_r_9_11_14 or _r_7 or _r_8
+_r_9_11_14 or ~_r_7
+_r_9_11_14 or ~_r_8
+

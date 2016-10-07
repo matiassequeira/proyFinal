@@ -1,0 +1,19 @@
+config A
+	bool "config B"
+menu "Primer menu"
+config B
+	bool
+	depends on A
+choice 
+	prompt "Prompt del choice"
+config C
+	bool "c"
+	depends on A
+endchoice
+config D
+	bool
+	depends on E
+config E
+	bool
+	select C
+endmenu

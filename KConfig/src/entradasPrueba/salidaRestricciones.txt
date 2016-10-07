@@ -1,0 +1,264 @@
+constraint_1:~_r_7 or ~_r_6
+constraint_2:~_r_8 or _r_6
+constraint_3:~_r_62_82 or _r_17
+constraint_4:_r_62_87 or ~_r_62_85 or ~_r_62_86
+constraint_5:~_r_62_87 or _r_62_85
+constraint_6:~_r_62_87 or _r_62_86
+constraint_7:~_r_62_88 or _r_62_87
+constraint_8:~_r_62_89 or _r_62_87
+constraint_9:~_r_62_98 or _r_62_96
+constraint_10:~_r_62_102 or _r_62_101
+constraint_11:~_r_62_112 or _r_62_111
+constraint_12:~_r_62_132 or _r_62_120
+constraint_13:~_r_62_135 or _r_54
+constraint_14:~_r_62_138 or _r_62_126
+constraint_15:~_r_62_140 or _r_58
+constraint_16:~_r_62_141 or _r_62_140
+constraint_17:~_r_62_142 or _r_62_121
+constraint_18:~_r_62_143 or _r_62_121
+constraint_19:~_r_62_144 or _r_62_121
+constraint_20:~_r_62_145 or _r_62_121
+constraint_21:~_r_62_146 or _r_62_121
+constraint_22:~_r_62_146 or _r_62_127
+constraint_23:~_r_62_147 or _r_17
+constraint_24:_r_62_163 or ~_r_62_162 or ~_r_9
+constraint_25:~_r_62_163 or _r_62_162
+constraint_26:~_r_62_163 or _r_9
+constraint_27:~_r_62_166 or _r_62_133
+constraint_28:~_r_62_194 or _r_62_193
+constraint_29:~_r_62_207 or _r_62_206
+constraint_30:~_r_62_234 or _r_62_70 or _r_62_71 or _r_62_72 or _r_62_73 or _r_62_74 or _r_62_75
+constraint_31:_r_62_234 or ~_r_62_70
+constraint_32:_r_62_234 or ~_r_62_71
+constraint_33:_r_62_234 or ~_r_62_72
+constraint_34:_r_62_234 or ~_r_62_73
+constraint_35:_r_62_234 or ~_r_62_74
+constraint_36:_r_62_234 or ~_r_62_75
+constraint_37:~_r_62_234_235_236 or _r_62_70
+constraint_38:~_r_62_234_235_236 or _r_62_71
+constraint_39:~_r_62_234_235_236 or _r_62_72
+constraint_40:~_r_62_234_235_236 or _r_62_73
+constraint_41:~_r_62_234_235_236 or _r_62_74
+constraint_42:~_r_62_234_235_236 or _r_62_75
+constraint_43:~_r_62_240 or _r_62_210
+constraint_44:~_r_62_240_241_242 or _r_62_211
+constraint_45:~_r_62_240_241_242 or _r_62_211
+constraint_46:~_r_62_244 or _r_62_129
+constraint_47:~_r_62_246_260 or _r_62_246_259
+constraint_48:~_r_62_246_262 or _r_62_246_260
+constraint_49:~_r_62_246_262 or _r_62_246_261
+constraint_50:~_r_62_267_269 or _r_62_129
+constraint_51:~_r_62_267_270 or _r_62_267_269
+constraint_52:~_r_62_267_272 or _r_62_267_271
+constraint_53:~_r_62_267_273 or _r_62_267_271
+constraint_54:~_r_62_267_274 or _r_62_267_273
+constraint_55:~_r_62_267_275_276_277 or _r_62_267_268
+constraint_56:_r_62_267_275_276_277 or ~_r_62_212 or ~_r_62_214
+constraint_57:~_r_62_267_275_276_277 or _r_62_212
+constraint_58:~_r_62_267_275_276_277 or _r_62_214
+constraint_59:~_r_62_267_275_276_277 or _r_62_267_268
+constraint_60:~_r_62_278_280 or _r_62_278_279
+constraint_61:~_r_62_278_283 or _r_62_278_282
+constraint_62:~_r_62_278_284 or _r_62_278_282
+constraint_63:~_r_62_278_292 or _r_62_278_290
+constraint_64:~_r_62_278_298 or _r_62_278_293
+constraint_65:~_r_62_301_302 or _r_62_152
+constraint_66:~_r_62_301_302 or _r_62_121
+constraint_67:~_r_62_301_302 or _r_54
+constraint_68:~_r_62_301_302 or _r_62_278_279
+constraint_69:~_r_62_301_303 or _r_62_153
+constraint_70:_r_62_304_307 or ~_r_62_304_305 or ~_r_62_304_306
+constraint_71:~_r_62_304_307 or _r_62_304_305
+constraint_72:~_r_62_304_307 or _r_62_304_306
+constraint_73:~_r_62_304_308 or _r_62_304_305
+constraint_74:~_r_62_96_311_313 or _r_62_96_311_312
+constraint_75:~_r_62_96_311_316 or _r_62_96_311_315
+constraint_76:~_r_62_96_311_318 or _r_62_96_311_312
+constraint_77:~_r_62_96_311_319_320_321 or _r_62_96_311_313
+constraint_78:~_r_62_96_311_319_320_321 or _r_62_96_311_313
+constraint_79:~_r_62_96_311_319_320_321 or _r_62_278_283
+constraint_80:~_r_62_96_311_319_320_321 or _r_62_278_293
+constraint_81:~_r_62_96_311_319_320_321 or _r_62_267_275_276_277
+constraint_82:~_r_62_96_311_319_320_321 or _r_54
+constraint_83:~_r_62_118_325 or _r_62_118
+constraint_84:~_r_62_118_326 or _r_62_118
+constraint_85:~_r_62_118_327 or _r_62_118
+constraint_86:~_r_62_118_328 or _r_62_118
+constraint_87:~_r_62_118_329 or _r_62_118
+constraint_88:~_r_62_118_330 or _r_62_118
+constraint_89:~_r_10 or _r_62_166 or _r_62_301_302 or _r_62_170
+constraint_90:_r_10 or ~_r_62_166
+constraint_91:_r_10 or ~_r_62_301_302
+constraint_92:_r_10 or ~_r_62_170
+constraint_93:~_r_22 or _r_62_136
+constraint_94:_r_62_77 or ~_r_17 or ~_r_332
+constraint_95:~_r_62_77 or _r_17
+constraint_96:~_r_62_77 or _r_332
+constraint_97:_r_62_79 or ~_r_62_78 or ~_r_62_120
+constraint_98:~_r_62_79 or _r_62_78
+constraint_99:~_r_62_79 or _r_62_120
+constraint_100:_r_62_81 or ~_r_62_80 or ~_r_62_120
+constraint_101:~_r_62_81 or _r_62_80
+constraint_102:~_r_62_81 or _r_62_120
+constraint_103:~_r_62_104 or _r_62_135
+constraint_104:_r_62_128 or ~_r_62_122 or ~_r_62_129
+constraint_105:~_r_62_128 or _r_62_122
+constraint_106:~_r_62_128 or _r_62_129
+constraint_107:_r_62_162 or ~_r_62_160 or ~_r_62_164
+constraint_108:~_r_62_162 or _r_62_160
+constraint_109:~_r_62_162 or _r_62_164
+constraint_110:_r_62_166 or ~_r_331 or ~_r_62_177
+constraint_111:~_r_62_166 or _r_331
+constraint_112:~_r_62_166 or _r_62_177
+constraint_113:~_r_62_167 or _r_62_199
+constraint_114:_r_62_174 or ~_r_62_166 or ~_r_62_178
+constraint_115:~_r_62_174 or _r_62_166
+constraint_116:~_r_62_174 or _r_62_178
+constraint_117:~_r_62_175 or _r_62_195
+constraint_118:~_r_62_193 or _r_62_301_302
+constraint_119:~_r_62_237_238_239 or _r_62_245
+constraint_120:~_r_62_278_285 or _r_62_278_295_296_297 or _r_62_278_295_296_297
+constraint_121:_r_62_278_285 or ~_r_62_278_295_296_297
+constraint_122:_r_62_278_285 or ~_r_62_278_295_296_297
+constraint_123:~_r_62_278_286 or _r_62_278_295_296_297 or _r_62_278_295_296_297
+constraint_124:_r_62_278_286 or ~_r_62_278_295_296_297
+constraint_125:_r_62_278_286 or ~_r_62_278_295_296_297
+constraint_126:~_r_62_278_287 or _r_62_278_295_296_297 or _r_62_278_295_296_297
+constraint_127:_r_62_278_287 or ~_r_62_278_295_296_297
+constraint_128:_r_62_278_287 or ~_r_62_278_295_296_297
+constraint_129:_r_62_278_290 or ~_r_58 or ~_r_62_278_295_296_297
+constraint_130:~_r_62_278_290 or _r_58
+constraint_131:~_r_62_278_290 or _r_62_278_295_296_297
+constraint_132:~_r_62_278_293 or _r_62_278_295_296_297 or _r_62_278_295_296_297
+constraint_133:_r_62_278_293 or ~_r_62_278_295_296_297
+constraint_134:_r_62_278_293 or ~_r_62_278_295_296_297
+constraint_135:~_r_62_96_311_314 or _r_62_96_311_319_320_321
+constraint_136:~_r_62_96_311_315 or _r_62_96_311_319_320_321
+constraint_137:~_r_7 or _r_62_122
+constraint_138:~_r_9 or _r_62_304_306
+constraint_139:~_r_9 or _r_62_106
+constraint_140:~_r_8 or ~_r_9 or _r_62_108
+constraint_141:~_r_8 or ~_r_9 or _r_62_109
+constraint_142:~_r_9 or _r_62_164
+constraint_143:~_r_9 or _r_62_126
+constraint_144:~_r_9 or _r_62_152
+constraint_145:~_r_9 or _r_62_176
+constraint_146:~_r_9 or _r_62_177
+constraint_147:~_r_9 or _r_62_183
+constraint_148:~_r_9 or _r_62_184
+constraint_149:~_r_9 or _r_62_178
+constraint_150:~_r_9 or _r_62_179
+constraint_151:~_r_9 or _r_62_180
+constraint_152:~_r_9 or _r_62_123
+constraint_153:~_r_9 or _r_62_182
+constraint_154:~_r_7 or ~_r_9 or _r_56
+constraint_155:~_r_9 or _r_62_172
+constraint_156:~_r_9 or _r_62_190
+constraint_157:~_r_9 or _r_62_192
+constraint_158:~_r_9 or _r_62_70
+constraint_159:~_r_9 or _r_62_71
+constraint_160:~_r_9 or _r_62_72
+constraint_161:~_r_9 or _r_62_73
+constraint_162:~_r_9 or _r_62_74
+constraint_163:~_r_9 or _r_62_75
+constraint_164:~_r_9 or _r_62_193
+constraint_165:~_r_9 or _r_62_194
+constraint_166:~_r_9 or _r_62_301_302
+constraint_167:~_r_9 or _r_62_196
+constraint_168:~_r_9 or _r_62_197
+constraint_169:~_r_9 or _r_62_198
+constraint_170:~_r_9 or _r_62_121
+constraint_171:~_r_62_237_238_239 or ~_r_9 or _r_62_202
+constraint_172:~_r_9 or _r_62_203
+constraint_173:~_r_9 or _r_62_204
+constraint_174:~_r_9 or _r_62_195
+constraint_175:~_r_9 or _r_62_225
+constraint_176:~_r_9 or _r_62_199
+constraint_177:~_r_9 or _r_62_246_266
+constraint_178:~_r_9 or _r_62_246_249
+constraint_179:~_r_9 or _r_62_246_250
+constraint_180:~_r_9 or _r_62_99
+constraint_181:~_r_9 or _r_62_246_265
+constraint_182:~_r_9 or _r_62_216
+constraint_183:~_r_8 or ~_r_9 or _r_62_217
+constraint_184:~_r_9 or _r_62_201
+constraint_185:~_r_9 or _r_62_185
+constraint_186:~_r_7 or ~_r_9 or _r_62_205
+constraint_187:~_r_9 or _r_62_208
+constraint_188:~_r_9 or _r_55
+constraint_189:~_r_9 or _r_62_100
+constraint_190:~_r_8 or ~_r_9 or _r_62_218
+constraint_191:~_r_9 or _r_62_90
+constraint_192:~_r_9 or _r_62_96
+constraint_193:~_r_9 or _r_62_91
+constraint_194:~_r_9 or _r_62_92
+constraint_195:~_r_8 or ~_r_9 or _r_62_98
+constraint_196:~_r_9 or _r_62_93
+constraint_197:~_r_8 or ~_r_9 or _r_62_212
+constraint_198:~_r_9 or _r_62_215
+constraint_199:~_r_7 or ~_r_9 or _r_62_221
+constraint_200:~_r_8 or ~_r_9 or _r_62_220
+constraint_201:~_r_7 or ~_r_9 or _r_62_226
+constraint_202:~_r_9 or _r_62_173
+constraint_203:~_r_7 or ~_r_9 or _r_62_232
+constraint_204:~_r_8 or ~_r_9 or _r_62_223
+constraint_205:~_r_9 or _r_62_210
+constraint_206:~_r_9 or _r_62_86
+constraint_207:~_r_9 or _r_62_278_279
+constraint_208:~_r_8 or ~_r_22 or _r_23
+constraint_209:~_r_62_114 or _r_62_243
+constraint_210:~_r_62_151 or _r_62_245
+constraint_211:~_r_62_246_258 or _r_62_246_259
+constraint_212:~_r_62_267_275_276_277 or _r_62_278_282
+constraint_213:~_r_62_243_337 or _r_62_243_336
+constraint_214:~_r_62_243_340 or _r_62_243_339
+constraint_215:~_r_62_243_340 or _r_62_145
+constraint_216:_r_62_243_341 or ~_r_62_243_340 or ~_r_62_77
+constraint_217:~_r_62_243_341 or _r_62_243_340
+constraint_218:~_r_62_243_341 or _r_62_77
+constraint_219:~_r_62_243_342 or _r_62_243_341
+constraint_220:~_r_62_243_344 or _r_62_243_339
+constraint_221:_r_62_243_345 or ~_r_62_301_302 or ~_r_62_243
+constraint_222:~_r_62_243_345 or _r_62_301_302
+constraint_223:~_r_62_243_345 or _r_62_243
+constraint_224:~_r_62_243_346 or _r_332
+constraint_225:~_r_62_243_347 or _r_62_243_346
+constraint_226:~_r_62_244_350 or _r_62_78 or _r_62_80
+constraint_227:_r_62_244_350 or ~_r_62_78
+constraint_228:_r_62_244_350 or ~_r_62_80
+constraint_229:~_r_331_356 or _r_331_355
+constraint_230:~_r_331_359 or _r_331
+constraint_231:~_r_331_359 or _r_62_159
+constraint_232:~_r_331_360 or _r_331_359
+constraint_233:~_r_331_361 or _r_331_359
+constraint_234:~_r_331_362 or _r_331_359
+constraint_235:~_r_331_363 or _r_331
+constraint_236:~_r_331_364 or _r_331_359
+constraint_237:~_r_331_367 or _r_331_363
+constraint_238:~_r_332_370 or ~_r_6
+constraint_239:~_r_332_372 or _r_332_371
+constraint_240:~_r_332_376_379 or _r_332_376_378
+constraint_241:~_r_332_376_380 or _r_332_376_378
+constraint_242:~_r_332_376_381 or _r_332_376_378
+constraint_243:~_r_332_376_382 or _r_332_376_378
+constraint_244:~_r_332_376_383 or _r_332_376_378
+constraint_245:~_r_332_376_384 or _r_332_376_378
+constraint_246:_r_332_376_392 or ~_r_332_376_377 or ~_r_332_376_391
+constraint_247:~_r_332_376_392 or _r_332_376_377
+constraint_248:~_r_332_376_392 or _r_332_376_391
+constraint_249:_r_332_376_393 or ~_r_332_376_377 or ~_r_332_376_391
+constraint_250:~_r_332_376_393 or _r_332_376_377
+constraint_251:~_r_332_376_393 or _r_332_376_391
+constraint_252:_r_332_376_394 or ~_r_332_376_377 or ~_r_332_376_391
+constraint_253:~_r_332_376_394 or _r_332_376_377
+constraint_254:~_r_332_376_394 or _r_332_376_391
+constraint_255:_r_332_376_395 or ~_r_332_376_377 or ~_r_332_376_391
+constraint_256:~_r_332_376_395 or _r_332_376_377
+constraint_257:~_r_332_376_395 or _r_332_376_391
+constraint_258:~_r_332_376_396 or _r_332_376_377
+constraint_259:~_r_332_376_397 or _r_332_376_396
+constraint_260:~_r_332_376_401 or _r_332_376_377
+constraint_261:~_r_332_376_404 or _r_332_375
+constraint_262:~_r_62_243_348_405 or _r_62_243_348
+constraint_264:~_r_62_243_348_407 or _r_62_243_348
+constraint_263:~_r_62_243_348_406 or _r_62_243_348_405

@@ -1,0 +1,819 @@
+:r Menu Padre(_r) 
+	:o 64BIT(_r_6) 
+	:m X86_32(_r_7) 
+	:m X86_64(_r_8) 
+	:m X86(_r_9) 
+	:m INSTRUCTION_DECODER(_r_10) 
+	:m PERF_EVENTS_INTEL_UNCORE(_r_11) 
+	:m OUTPUT_FORMAT(_r_12) 
+	:m ARCH_DEFCONFIG(_r_13) 
+	:m LOCKDEP_SUPPORT(_r_14) 
+	:m STACKTRACE_SUPPORT(_r_15) 
+	:m HAVE_LATENCYTOP_SUPPORT(_r_16) 
+	:m MMU(_r_17) 
+	:m SBUS(_r_18) 
+	:m NEED_DMA_MAP_STATE(_r_19) 
+	:m NEED_SG_DMA_LENGTH(_r_20) 
+	:m GENERIC_ISA_DMA(_r_21) 
+	:m GENERIC_BUG(_r_22) 
+	:m GENERIC_BUG_RELATIVE_POINTERS(_r_23) 
+	:m GENERIC_HWEIGHT(_r_24) 
+	:m ARCH_MAY_HAVE_PC_FDC(_r_25) 
+	:m RWSEM_XCHGADD_ALGORITHM(_r_26) 
+	:m GENERIC_CALIBRATE_DELAY(_r_27) 
+	:m ARCH_HAS_CPU_RELAX(_r_28) 
+	:m ARCH_HAS_CACHE_LINE_SIZE(_r_29) 
+	:m HAVE_SETUP_PER_CPU_AREA(_r_30) 
+	:m NEED_PER_CPU_EMBED_FIRST_CHUNK(_r_31) 
+	:m NEED_PER_CPU_PAGE_FIRST_CHUNK(_r_32) 
+	:m ARCH_HIBERNATION_POSSIBLE(_r_33) 
+	:m ARCH_SUSPEND_POSSIBLE(_r_34) 
+	:m ARCH_WANT_HUGE_PMD_SHARE(_r_35) 
+	:m ARCH_WANT_GENERAL_HUGETLB(_r_36) 
+	:m ZONE_DMA32(_r_37) 
+	:m AUDIT_ARCH(_r_38) 
+	:m ARCH_SUPPORTS_OPTIMIZED_INLINING(_r_39) 
+	:m ARCH_SUPPORTS_DEBUG_PAGEALLOC(_r_40) 
+	:m HAVE_INTEL_TXT(_r_41) 
+	:m X86_32_SMP(_r_42) 
+	:m X86_64_SMP(_r_43) 
+	:m X86_HT(_r_44) 
+	:m X86_32_LAZY_GS(_r_45) 
+	:m ARCH_HWEIGHT_CFLAGS(_r_46) 
+	:m ARCH_SUPPORTS_UPROBES(_r_47) 
+	:m FIX_EARLYCON_MEM(_r_48) 
+	:m PGTABLE_LEVELS(_r_49) 
+	:m ARCH(_r_50) 
+	:m KERNELVERSION(_r_51) 
+	:m DEFCONFIG_LIST(_r_52) 
+	:m CONSTRUCTORS(_r_53) 
+	:m IRQ_WORK(_r_54) 
+	:m BUILDTIME_EXTABLE_SORT(_r_55) 
+	:m HAVE_GENERIC_DMA_COHERENT(_r_56) 
+	:m SLABINFO(_r_57) 
+	:m RT_MUTEXES(_r_58) 
+	:m BASE_SMALL(_r_59) 
+	:m INIT_ALL_POSSIBLE(_r_60) 
+	:m STOP_MACHINE(_r_61) 
+_r_62_252) 
+			:o CGROUP_DEBUG(_r_62_252_253) 
+			:o CGROUP_FREEZER(_r_62_252_254) 
+			:o CGROUP_DEVICE(_r_62_252_255) 
+			:o CPUSETS(_r_62_252_256) 
+			:o PROC_PID_CPUSET(_r_62_252_257) 
+			:o CGROUP_CPUACCT(_r_62_252_258) 
+			:m PAGE_COUNTER(_r_62_252_259) 
+			:o MEMCG(_r_62_252_260) 
+			:o MEMCG_SWAP(_r_62_252_261) 
+			:o MEMCG_SWAP_ENABLED(_r_62_252_262) 
+			:o MEMCG_KMEM(_r_62_252_263) 
+			:o CGROUP_HUGETLB(_r_62_252_264) 
+			:o CGROUP_PERF(_r_62_252_265) 
+			:o BLK_CGROUP(_r_62_252_266) 
+			:o DEBUG_BLK_CGROUP(_r_62_252_267) 
+			:o CGROUP_SCHED(_r_62_252_268) _r_62_272) 
+			:o UTS_NS(_r_62_272_273) 
+			:o IPC_NS(_r_62_272_274) 
+			:o USER_NS(_r_62_272_275) 
+			:o PID_NS(_r_62_272_276) 
+			:o NET_NS(_r_62_272_277) 	:m "General setup"(_r_62) 
+		:m BROKEN(_r_62_63) 
+		:m BROKEN_ON_SMP(_r_62_64) 
+		:m INIT_ENV_ARG_LIMIT(_r_62_65) 
+		:m CROSS_COMPILE(_r_62_66) 
+		:o COMPILE_TEST(_r_62_67) 
+		:m LOCALVERSION(_r_62_68) 
+		:o LOCALVERSION_AUTO(_r_62_69) 
+		:m HAVE_KERNEL_GZIP(_r_62_70) 
+		:m HAVE_KERNEL_BZIP2(_r_62_71) 
+		:m HAVE_KERNEL_LZMA(_r_62_72) 
+		:m HAVE_KERNEL_XZ(_r_62_73) 
+		:m HAVE_KERNEL_LZO(_r_62_74) 
+		:m HAVE_KERNEL_LZ4(_r_62_75) 
+		:m DEFAULT_HOSTNAME(_r_62_76) 
+		:o SWAP(_r_62_77) 
+		:o SYSVIPC(_r_62_78) 
+		:m SYSVIPC_SYSCTL(_r_62_79) 
+		:o POSIX_MQUEUE(_r_62_80) 
+		:m POSIX_MQUEUE_SYSCTL(_r_62_81) 
+		:o CROSS_MEMORY_ATTACH(_r_62_82) 
+		:o FHANDLE(_r_62_83) 
+		:o USELIB(_r_62_84) 
+		:o AUDIT(_r_62_85) 
+		:m HAVE_ARCH_AUDITSYSCALL(_r_62_86) 
+		:o AUDITSYSCALL(_r_62_87) 
+		:m AUDIT_WATCH(_r_62_88) 
+		:m AUDIT_TREE(_r_62_89) 
+		:m CLOCKSOURCE_WATCHDOG(_r_62_90) 
+		:m ARCH_CLOCKSOURCE_DATA(_r_62_91) 
+		:m CLOCKSOURCE_VALIDATE_LAST_CYCLE(_r_62_92) 
+		:m GENERIC_TIME_VSYSCALL(_r_62_93) 
+		:m GENERIC_TIME_VSYSCALL_OLD(_r_62_94) 
+		:m ARCH_USES_GETTIMEOFFSET(_r_62_95) 
+		:m GENERIC_CLOCKEVENTS(_r_62_96) 
+			:m "Timers subsystem"(_r_62_96_353) 
+				:m TICK_ONESHOT(_r_62_96_353_354) 
+				:m NO_HZ_COMMON(_r_62_96_353_355) 
+				:o NO_HZ_FULL_ALL(_r_62_96_353_356) 
+				:o NO_HZ_FULL_SYSIDLE(_r_62_96_353_357) 
+				:m NO_HZ_FULL_SYSIDLE_SMALL(_r_62_96_353_358) 
+				:o NO_HZ(_r_62_96_353_359) 
+				:o HIGH_RES_TIMERS(_r_62_96_353_360) 
+				:m "Timer tick handling"(_r_62_96_353_361) 
+					:g (_r_62_96_353_361_362) [1,1] 
+						:o HZ_PERIODIC(_r_62_96_353_361_362_363) 
+						:o NO_HZ_IDLE(_r_62_96_353_361_362_364) 
+						:o NO_HZ_FULL(_r_62_96_353_361_362_365)  
+		:m ARCH_HAS_TICK_BROADCAST(_r_62_97) 
+		:m GENERIC_CLOCKEVENTS_BROADCAST(_r_62_98) 
+		:m GENERIC_CLOCKEVENTS_MIN_ADJUST(_r_62_99) 
+		:m GENERIC_CMOS_UPDATE(_r_62_100) 
+		:m BUILD_BIN2C(_r_62_101) 
+		:o IKCONFIG(_r_62_102) 
+		:o IKCONFIG_PROC(_r_62_103) 
+		:m LOG_BUF_SHIFT(_r_62_104) 
+		:m LOG_CPU_MAX_BUF_SHIFT(_r_62_105) 
+		:m HAVE_UNSTABLE_SCHED_CLOCK(_r_62_106) 
+		:m GENERIC_SCHED_CLOCK(_r_62_107) 
+		:m ARCH_SUPPORTS_NUMA_BALANCING(_r_62_108) 
+		:m ARCH_SUPPORTS_INT128(_r_62_109) 
+		:m ARCH_WANT_NUMA_VARIABLE_LOCALITY(_r_62_110) 
+		:o NUMA_BALANCING(_r_62_111) 
+		:o NUMA_BALANCING_DEFAULT_ENABLED(_r_62_112) 
+		:o CHECKPOINT_RESTORE(_r_62_113) 
+		:o SCHED_AUTOGROUP(_r_62_114) 
+		:o SYSFS_DEPRECATED(_r_62_115) 
+		:o SYSFS_DEPRECATED_V2(_r_62_116) 
+		:o RELAY(_r_62_117) 
+		:o BLK_DEV_INITRD(_r_62_118) 
+			:m INITRAMFS_SOURCE(_r_62_118_366) 
+			:m INITRAMFS_ROOT_UID(_r_62_118_367) 
+			:m INITRAMFS_ROOT_GID(_r_62_118_368) 
+			:o RD_GZIP(_r_62_118_369) 
+			:o RD_BZIP2(_r_62_118_370) 
+			:o RD_LZMA(_r_62_118_371) 
+			:o RD_XZ(_r_62_118_372) 
+			:o RD_LZO(_r_62_118_373) 
+			:o RD_LZ4(_r_62_118_374)  
+		:o CC_OPTIMIZE_FOR_SIZE(_r_62_119) 
+		:m SYSCTL(_r_62_120) 
+		:m ANON_INODES(_r_62_121) 
+		:m HAVE_UID16(_r_62_122) 
+		:m SYSCTL_EXCEPTION_TRACE(_r_62_123) 
+		:m SYSCTL_ARCH_UNALIGN_NO_WARN(_r_62_124) 
+		:m SYSCTL_ARCH_UNALIGN_ALLOW(_r_62_125) 
+		:m HAVE_PCSPKR_PLATFORM(_r_62_126) 
+		:m BPF(_r_62_127) 
+		:o UID16(_r_62_128) 
+		:o MULTIUSER(_r_62_129) 
+		:o SGETMASK_SYSCALL(_r_62_130) 
+		:o SYSFS_SYSCALL(_r_62_131) 
+		:o SYSCTL_SYSCALL(_r_62_132) 
+		:o KALLSYMS(_r_62_133) 
+		:o KALLSYMS_ALL(_r_62_134) 
+		:o PRINTK(_r_62_135) 
+		:o BUG(_r_62_136) 
+		:o ELF_CORE(_r_62_137) 
+		:o PCSPKR_PLATFORM(_r_62_138) 
+		:o BASE_FULL(_r_62_139) 
+		:o FUTEX(_r_62_140) 
+		:m HAVE_FUTEX_CMPXCHG(_r_62_141) 
+		:o EPOLL(_r_62_142) 
+		:o SIGNALFD(_r_62_143) 
+		:o TIMERFD(_r_62_144) 
+		:o EVENTFD(_r_62_145) 
+		:o BPF_SYSCALL(_r_62_146) 
+		:o SHMEM(_r_62_147) 
+		:o AIO(_r_62_148) 
+		:o ADVISE_SYSCALLS(_r_62_149) 
+		:o PCI_QUIRKS(_r_62_150) 
+		:o EMBEDDED(_r_62_151) 
+		:m HAVE_PERF_EVENTS(_r_62_152) 
+		:m PERF_USE_VMALLOC(_r_62_153) 
+		:o VM_EVENT_COUNTERS(_r_62_154) 
+		:o SLUB_DEBUG(_r_62_155) 
+		:o COMPAT_BRK(_r_62_156) 
+		:o SLUB_CPU_PARTIAL(_r_62_157) 
+		:o MMAP_ALLOW_UNINITIALIZED(_r_62_158) 
+		:o SYSTEM_TRUSTED_KEYRING(_r_62_159) 
+		:o PROFILING(_r_62_160) 
+		:m TRACEPOINTS(_r_62_161) 
+		:o OPROFILE(_r_62_162) 
+		:o OPROFILE_EVENT_MULTIPLEX(_r_62_163) 
+		:m HAVE_OPROFILE(_r_62_164) 
+		:m OPROFILE_NMI_TIMER(_r_62_165) 
+		:o KPROBES(_r_62_166) 
+		:o JUMP_LABEL(_r_62_167) 
+		:m OPTPROBES(_r_62_168) 
+		:m KPROBES_ON_FTRACE(_r_62_169) 
+		:m UPROBES(_r_62_170) 
+		:m HAVE_64BIT_ALIGNED_ACCESS(_r_62_171) 
+		:m HAVE_EFFICIENT_UNALIGNED_ACCESS(_r_62_172) 
+		:m ARCH_USE_BUILTIN_BSWAP(_r_62_173) 
+		:m KRETPROBES(_r_62_174) 
+		:m USER_RETURN_NOTIFIER(_r_62_175) 
+		:m HAVE_IOREMAP_PROT(_r_62_176) 
+		:m HAVE_KPROBES(_r_62_177) 
+		:m HAVE_KRETPROBES(_r_62_178) 
+		:m HAVE_OPTPROBES(_r_62_179) 
+		:m HAVE_KPROBES_ON_FTRACE(_r_62_180) 
+		:m HAVE_NMI_WATCHDOG(_r_62_181) 
+		:m HAVE_ARCH_TRACEHOOK(_r_62_182) 
+		:m HAVE_DMA_ATTRS(_r_62_183) 
+		:m HAVE_DMA_CONTIGUOUS(_r_62_184) 
+		:m GENERIC_SMP_IDLE_THREAD(_r_62_185) 
+		:m GENERIC_IDLE_POLL_SETUP(_r_62_186) 
+		:m ARCH_INIT_TASK(_r_62_187) 
+		:m ARCH_TASK_STRUCT_ALLOCATOR(_r_62_188) 
+		:m ARCH_THREAD_INFO_ALLOCATOR(_r_62_189) 
+		:m HAVE_REGS_AND_STACK_ACCESS_API(_r_62_190) 
+		:m HAVE_CLK(_r_62_191) 
+		:m HAVE_DMA_API_DEBUG(_r_62_192) 
+		:m HAVE_HW_BREAKPOINT(_r_62_193) 
+		:m HAVE_MIXED_BREAKPOINTS_REGS(_r_62_194) 
+		:m HAVE_USER_RETURN_NOTIFIER(_r_62_195) 
+		:m HAVE_PERF_EVENTS_NMI(_r_62_196) 
+		:m HAVE_PERF_REGS(_r_62_197) 
+		:m HAVE_PERF_USER_STACK_DUMP(_r_62_198) 
+		:m HAVE_ARCH_JUMP_LABEL(_r_62_199) 
+		:m HAVE_RCU_TABLE_FREE(_r_62_200) 
+		:m ARCH_HAVE_NMI_SAFE_CMPXCHG(_r_62_201) 
+		:m HAVE_ALIGNED_STRUCT_PAGE(_r_62_202) 
+		:m HAVE_CMPXCHG_LOCAL(_r_62_203) 
+		:m HAVE_CMPXCHG_DOUBLE(_r_62_204) 
+		:m ARCH_WANT_IPC_PARSE_VERSION(_r_62_205) 
+		:m ARCH_WANT_COMPAT_IPC_PARSE_VERSION(_r_62_206) 
+		:m ARCH_WANT_OLD_COMPAT_IPC(_r_62_207) 
+		:m HAVE_ARCH_SECCOMP_FILTER(_r_62_208) 
+		:m SECCOMP_FILTER(_r_62_209) 
+		:m HAVE_CC_STACKPROTECTOR(_r_62_210) 
+		:m CC_STACKPROTECTOR(_r_62_211) 
+		:m HAVE_CONTEXT_TRACKING(_r_62_212) 
+		:m HAVE_VIRT_CPU_ACCOUNTING(_r_62_213) 
+		:m HAVE_VIRT_CPU_ACCOUNTING_GEN(_r_62_214) 
+		:m HAVE_IRQ_TIME_ACCOUNTING(_r_62_215) 
+		:m HAVE_ARCH_TRANSPARENT_HUGEPAGE(_r_62_216) 
+		:m HAVE_ARCH_HUGE_VMAP(_r_62_217) 
+		:m HAVE_ARCH_SOFT_DIRTY(_r_62_218) 
+		:m HAVE_MOD_ARCH_SPECIFIC(_r_62_219) 
+		:m MODULES_USE_ELF_RELA(_r_62_220) 
+		:m MODULES_USE_ELF_REL(_r_62_221) 
+		:m HAVE_UNDERSCORE_SYMBOL_PREFIX(_r_62_222) 
+		:m HAVE_IRQ_EXIT_ON_IRQ_STACK(_r_62_223) 
+		:m PGTABLE_LEVELS(_r_62_224) 
+		:m ARCH_HAS_ELF_RANDOMIZE(_r_62_225) 
+		:m CLONE_BACKWARDS(_r_62_226) 
+		:m CLONE_BACKWARDS2(_r_62_227) 
+		:m CLONE_BACKWARDS3(_r_62_228) 
+		:m ODD_RT_SIGACTION(_r_62_229) 
+		:m OLD_SIGSUSPEND(_r_62_230) 
+		:m OLD_SIGSUSPEND3(_r_62_231) 
+		:m OLD_SIGACTION(_r_62_232) 
+		:m COMPAT_OLD_SIGACTION(_r_62_233) 
+		:m "Kernel compression mode"(_r_62_234) 
+			:g (_r_62_234_235) [1,1] 
+				:o KERNEL_GZIP(_r_62_234_235_236) 
+				:o KERNEL_BZIP2(_r_62_234_235_237) 
+				:o KERNEL_LZMA(_r_62_234_235_238) 
+				:o KERNEL_XZ(_r_62_234_235_239) 
+				:o KERNEL_LZO(_r_62_234_235_240) 
+				:o KERNEL_LZ4(_r_62_234_235_241) 
+				:m "Choose SLAB allocator"(_r_62_242) 
+					:g (_r_62_242_243) [1,1] 
+						:o SLAB(_r_62_242_243_244) 
+						:o SLUB(_r_62_242_243_245) 
+						:o SLOB(_r_62_242_243_246) 
+						:m "Stack Protector buffer overflow detection"(_r_62_247) 
+							:g (_r_62_247_248) [1,1] 
+								:o CC_STACKPROTECTOR_NONE(_r_62_247_248_249) 
+								:o CC_STACKPROTECTOR_REGULAR(_r_62_247_248_250) 
+								:o CC_STACKPROTECTOR_STRONG(_r_62_247_248_251) 
+		:o CGROUPS(_r_62_252) 
+		:o NAMESPACES(_r_62_272) 
+		:o EXPERT(_r_62_278) 
+		:m "IRQ subsystem"(_r_62_279) 
+			:m MAY_HAVE_SPARSE_IRQ(_r_62_279_280) 
+			:m GENERIC_IRQ_LEGACY(_r_62_279_281) 
+			:m GENERIC_IRQ_PROBE(_r_62_279_282) 
+			:m GENERIC_IRQ_SHOW(_r_62_279_283) 
+			:m GENERIC_IRQ_SHOW_LEVEL(_r_62_279_284) 
+			:m GENERIC_IRQ_LEGACY_ALLOC_HWIRQ(_r_62_279_285) 
+			:m GENERIC_PENDING_IRQ(_r_62_279_286) 
+			:m AUTO_IRQ_AFFINITY(_r_62_279_287) 
+			:m HARDIRQS_SW_RESEND(_r_62_279_288) 
+			:m IRQ_PREFLOW_FASTEOI(_r_62_279_289) 
+			:m IRQ_EDGE_EOI_HANDLER(_r_62_279_290) 
+			:m GENERIC_IRQ_CHIP(_r_62_279_291) 
+			:m IRQ_DOMAIN(_r_62_279_292) 
+			:m IRQ_DOMAIN_HIERARCHY(_r_62_279_293) 
+			:m GENERIC_MSI_IRQ(_r_62_279_294) 
+			:m GENERIC_MSI_IRQ_DOMAIN(_r_62_279_295) 
+			:m HANDLE_DOMAIN_IRQ(_r_62_279_296) 
+			:o IRQ_DOMAIN_DEBUG(_r_62_279_297) 
+			:m IRQ_FORCED_THREADING(_r_62_279_298) 
+			:o SPARSE_IRQ(_r_62_279_299) 
+		:m "IRQ subsystem"(_r_62_279) 
+			:m MAY_HAVE_SPARSE_IRQ(_r_62_279_280) 
+			:m GENERIC_IRQ_LEGACY(_r_62_279_281) 
+			:m GENERIC_IRQ_PROBE(_r_62_279_282) 
+			:m GENERIC_IRQ_SHOW(_r_62_279_283) 
+			:m GENERIC_IRQ_SHOW_LEVEL(_r_62_279_284) 
+			:m GENERIC_IRQ_LEGACY_ALLOC_HWIRQ(_r_62_279_285) 
+			:m GENERIC_PENDING_IRQ(_r_62_279_286) 
+			:m AUTO_IRQ_AFFINITY(_r_62_279_287) 
+			:m HARDIRQS_SW_RESEND(_r_62_279_288) 
+			:m IRQ_PREFLOW_FASTEOI(_r_62_279_289) 
+			:m IRQ_EDGE_EOI_HANDLER(_r_62_279_290) 
+			:m GENERIC_IRQ_CHIP(_r_62_279_291) 
+			:m IRQ_DOMAIN(_r_62_279_292) 
+			:m IRQ_DOMAIN_HIERARCHY(_r_62_279_293) 
+			:m GENERIC_MSI_IRQ(_r_62_279_294) 
+			:m GENERIC_MSI_IRQ_DOMAIN(_r_62_279_295) 
+			:m HANDLE_DOMAIN_IRQ(_r_62_279_296) 
+			:o IRQ_DOMAIN_DEBUG(_r_62_279_297) 
+			:m IRQ_FORCED_THREADING(_r_62_279_298) 
+			:o SPARSE_IRQ(_r_62_279_299) 
+		:m "CPU/Task time and stats accounting"(_r_62_300) 
+			:m VIRT_CPU_ACCOUNTING(_r_62_300_301) 
+			:o BSD_PROCESS_ACCT(_r_62_300_302) 
+			:o BSD_PROCESS_ACCT_V3(_r_62_300_303) 
+			:o TASKSTATS(_r_62_300_304) 
+			:o TASK_DELAY_ACCT(_r_62_300_305) 
+			:o TASK_XACCT(_r_62_300_306) 
+			:o TASK_IO_ACCOUNTING(_r_62_300_307) 
+			:m "Cputime accounting"(_r_62_300_308) 
+				:g (_r_62_300_308_309) [1,1] 
+					:o TICK_CPU_ACCOUNTING(_r_62_300_308_309_310) 
+					:o VIRT_CPU_ACCOUNTING_NATIVE(_r_62_300_308_309_311) 
+					:o VIRT_CPU_ACCOUNTING_GEN(_r_62_300_308_309_312) 
+					:o IRQ_TIME_ACCOUNTING(_r_62_300_308_309_313) 
+		:m "IRQ subsystem"(_r_62_279) 
+			:m MAY_HAVE_SPARSE_IRQ(_r_62_279_280) 
+			:m GENERIC_IRQ_LEGACY(_r_62_279_281) 
+			:m GENERIC_IRQ_PROBE(_r_62_279_282) 
+			:m GENERIC_IRQ_SHOW(_r_62_279_283) 
+			:m GENERIC_IRQ_SHOW_LEVEL(_r_62_279_284) 
+			:m GENERIC_IRQ_LEGACY_ALLOC_HWIRQ(_r_62_279_285) 
+			:m GENERIC_PENDING_IRQ(_r_62_279_286) 
+			:m AUTO_IRQ_AFFINITY(_r_62_279_287) 
+			:m HARDIRQS_SW_RESEND(_r_62_279_288) 
+			:m IRQ_PREFLOW_FASTEOI(_r_62_279_289) 
+			:m IRQ_EDGE_EOI_HANDLER(_r_62_279_290) 
+			:m GENERIC_IRQ_CHIP(_r_62_279_291) 
+			:m IRQ_DOMAIN(_r_62_279_292) 
+			:m IRQ_DOMAIN_HIERARCHY(_r_62_279_293) 
+			:m GENERIC_MSI_IRQ(_r_62_279_294) 
+			:m GENERIC_MSI_IRQ_DOMAIN(_r_62_279_295) 
+			:m HANDLE_DOMAIN_IRQ(_r_62_279_296) 
+			:o IRQ_DOMAIN_DEBUG(_r_62_279_297) 
+			:m IRQ_FORCED_THREADING(_r_62_279_298) 
+			:o SPARSE_IRQ(_r_62_279_299) 
+		:m "CPU/Task time and stats accounting"(_r_62_300) 
+			:m VIRT_CPU_ACCOUNTING(_r_62_300_301) 
+			:o BSD_PROCESS_ACCT(_r_62_300_302) 
+			:o BSD_PROCESS_ACCT_V3(_r_62_300_303) 
+			:o TASKSTATS(_r_62_300_304) 
+			:o TASK_DELAY_ACCT(_r_62_300_305) 
+			:o TASK_XACCT(_r_62_300_306) 
+			:o TASK_IO_ACCOUNTING(_r_62_300_307) 
+			:m "Cputime accounting"(_r_62_300_308) 
+				:g (_r_62_300_308_309) [1,1] 
+					:o TICK_CPU_ACCOUNTING(_r_62_300_308_309_310) 
+					:o VIRT_CPU_ACCOUNTING_NATIVE(_r_62_300_308_309_311) 
+					:o VIRT_CPU_ACCOUNTING_GEN(_r_62_300_308_309_312) 
+					:o IRQ_TIME_ACCOUNTING(_r_62_300_308_309_313) 
+		:m "RCU Subsystem"(_r_62_314) 
+			:m SRCU(_r_62_314_315) 
+			:o TASKS_RCU(_r_62_314_316) 
+			:m RCU_STALL_COMMON(_r_62_314_317) 
+			:m CONTEXT_TRACKING(_r_62_314_318) 
+			:o RCU_USER_QS(_r_62_314_319) 
+			:o CONTEXT_TRACKING_FORCE(_r_62_314_320) 
+			:m RCU_FANOUT(_r_62_314_321) 
+			:m RCU_FANOUT_LEAF(_r_62_314_322) 
+			:o RCU_FANOUT_EXACT(_r_62_314_323) 
+			:o RCU_FAST_NO_HZ(_r_62_314_324) 
+			:m TREE_RCU_TRACE(_r_62_314_325) 
+			:o RCU_BOOST(_r_62_314_326) 
+			:m RCU_KTHREAD_PRIO(_r_62_314_327) 
+			:m RCU_BOOST_DELAY(_r_62_314_328) 
+			:o RCU_NOCB_CPU(_r_62_314_329) 
+			:m RCU_EXPEDITE_BOOT(_r_62_314_330) 
+			:m "RCU Implementation"(_r_62_314_331) 
+				:g (_r_62_314_331_332) [1,1] 
+					:o TREE_RCU(_r_62_314_331_332_333) 
+					:o PREEMPT_RCU(_r_62_314_331_332_334) 
+					:o TINY_RCU(_r_62_314_331_332_335) 
+					:m "Build-forced no-CBs CPUs"(_r_62_314_336) 
+						:g (_r_62_314_336_337) [1,1] 
+							:o RCU_NOCB_CPU_NONE(_r_62_314_336_337_338) 
+							:o RCU_NOCB_CPU_ZERO(_r_62_314_336_337_339) 
+							:o RCU_NOCB_CPU_ALL(_r_62_314_336_337_340) 
+		:m "IRQ subsystem"(_r_62_279) 
+			:m MAY_HAVE_SPARSE_IRQ(_r_62_279_280) 
+			:m GENERIC_IRQ_LEGACY(_r_62_279_281) 
+			:m GENERIC_IRQ_PROBE(_r_62_279_282) 
+			:m GENERIC_IRQ_SHOW(_r_62_279_283) 
+			:m GENERIC_IRQ_SHOW_LEVEL(_r_62_279_284) 
+			:m GENERIC_IRQ_LEGACY_ALLOC_HWIRQ(_r_62_279_285) 
+			:m GENERIC_PENDING_IRQ(_r_62_279_286) 
+			:m AUTO_IRQ_AFFINITY(_r_62_279_287) 
+			:m HARDIRQS_SW_RESEND(_r_62_279_288) 
+			:m IRQ_PREFLOW_FASTEOI(_r_62_279_289) 
+			:m IRQ_EDGE_EOI_HANDLER(_r_62_279_290) 
+			:m GENERIC_IRQ_CHIP(_r_62_279_291) 
+			:m IRQ_DOMAIN(_r_62_279_292) 
+			:m IRQ_DOMAIN_HIERARCHY(_r_62_279_293) 
+			:m GENERIC_MSI_IRQ(_r_62_279_294) 
+			:m GENERIC_MSI_IRQ_DOMAIN(_r_62_279_295) 
+			:m HANDLE_DOMAIN_IRQ(_r_62_279_296) 
+			:o IRQ_DOMAIN_DEBUG(_r_62_279_297) 
+			:m IRQ_FORCED_THREADING(_r_62_279_298) 
+			:o SPARSE_IRQ(_r_62_279_299) 
+		:m "CPU/Task time and stats accounting"(_r_62_300) 
+			:m VIRT_CPU_ACCOUNTING(_r_62_300_301) 
+			:o BSD_PROCESS_ACCT(_r_62_300_302) 
+			:o BSD_PROCESS_ACCT_V3(_r_62_300_303) 
+			:o TASKSTATS(_r_62_300_304) 
+			:o TASK_DELAY_ACCT(_r_62_300_305) 
+			:o TASK_XACCT(_r_62_300_306) 
+			:o TASK_IO_ACCOUNTING(_r_62_300_307) 
+			:m "Cputime accounting"(_r_62_300_308) 
+				:g (_r_62_300_308_309) [1,1] 
+					:o TICK_CPU_ACCOUNTING(_r_62_300_308_309_310) 
+					:o VIRT_CPU_ACCOUNTING_NATIVE(_r_62_300_308_309_311) 
+					:o VIRT_CPU_ACCOUNTING_GEN(_r_62_300_308_309_312) 
+					:o IRQ_TIME_ACCOUNTING(_r_62_300_308_309_313) 
+		:m "RCU Subsystem"(_r_62_314) 
+			:m SRCU(_r_62_314_315) 
+			:o TASKS_RCU(_r_62_314_316) 
+			:m RCU_STALL_COMMON(_r_62_314_317) 
+			:m CONTEXT_TRACKING(_r_62_314_318) 
+			:o RCU_USER_QS(_r_62_314_319) 
+			:o CONTEXT_TRACKING_FORCE(_r_62_314_320) 
+			:m RCU_FANOUT(_r_62_314_321) 
+			:m RCU_FANOUT_LEAF(_r_62_314_322) 
+			:o RCU_FANOUT_EXACT(_r_62_314_323) 
+			:o RCU_FAST_NO_HZ(_r_62_314_324) 
+			:m TREE_RCU_TRACE(_r_62_314_325) 
+			:o RCU_BOOST(_r_62_314_326) 
+			:m RCU_KTHREAD_PRIO(_r_62_314_327) 
+			:m RCU_BOOST_DELAY(_r_62_314_328) 
+			:o RCU_NOCB_CPU(_r_62_314_329) 
+			:m RCU_EXPEDITE_BOOT(_r_62_314_330) 
+			:m "RCU Implementation"(_r_62_314_331) 
+				:g (_r_62_314_331_332) [1,1] 
+					:o TREE_RCU(_r_62_314_331_332_333) 
+					:o PREEMPT_RCU(_r_62_314_331_332_334) 
+					:o TINY_RCU(_r_62_314_331_332_335) 
+					:m "Build-forced no-CBs CPUs"(_r_62_314_336) 
+						:g (_r_62_314_336_337) [1,1] 
+							:o RCU_NOCB_CPU_NONE(_r_62_314_336_337_338) 
+							:o RCU_NOCB_CPU_ZERO(_r_62_314_336_337_339) 
+							:o RCU_NOCB_CPU_ALL(_r_62_314_336_337_340) 
+		:m "Kernel Performance Events And Counters"(_r_62_341) 
+			:o PERF_EVENTS(_r_62_341_342) 
+			:o DEBUG_PERF_USE_VMALLOC(_r_62_341_343) 
+		:m "IRQ subsystem"(_r_62_279) 
+			:m MAY_HAVE_SPARSE_IRQ(_r_62_279_280) 
+			:m GENERIC_IRQ_LEGACY(_r_62_279_281) 
+			:m GENERIC_IRQ_PROBE(_r_62_279_282) 
+			:m GENERIC_IRQ_SHOW(_r_62_279_283) 
+			:m GENERIC_IRQ_SHOW_LEVEL(_r_62_279_284) 
+			:m GENERIC_IRQ_LEGACY_ALLOC_HWIRQ(_r_62_279_285) 
+			:m GENERIC_PENDING_IRQ(_r_62_279_286) 
+			:m AUTO_IRQ_AFFINITY(_r_62_279_287) 
+			:m HARDIRQS_SW_RESEND(_r_62_279_288) 
+			:m IRQ_PREFLOW_FASTEOI(_r_62_279_289) 
+			:m IRQ_EDGE_EOI_HANDLER(_r_62_279_290) 
+			:m GENERIC_IRQ_CHIP(_r_62_279_291) 
+			:m IRQ_DOMAIN(_r_62_279_292) 
+			:m IRQ_DOMAIN_HIERARCHY(_r_62_279_293) 
+			:m GENERIC_MSI_IRQ(_r_62_279_294) 
+			:m GENERIC_MSI_IRQ_DOMAIN(_r_62_279_295) 
+			:m HANDLE_DOMAIN_IRQ(_r_62_279_296) 
+			:o IRQ_DOMAIN_DEBUG(_r_62_279_297) 
+			:m IRQ_FORCED_THREADING(_r_62_279_298) 
+			:o SPARSE_IRQ(_r_62_279_299) 
+		:m "CPU/Task time and stats accounting"(_r_62_300) 
+			:m VIRT_CPU_ACCOUNTING(_r_62_300_301) 
+			:o BSD_PROCESS_ACCT(_r_62_300_302) 
+			:o BSD_PROCESS_ACCT_V3(_r_62_300_303) 
+			:o TASKSTATS(_r_62_300_304) 
+			:o TASK_DELAY_ACCT(_r_62_300_305) 
+			:o TASK_XACCT(_r_62_300_306) 
+			:o TASK_IO_ACCOUNTING(_r_62_300_307) 
+			:m "Cputime accounting"(_r_62_300_308) 
+				:g (_r_62_300_308_309) [1,1] 
+					:o TICK_CPU_ACCOUNTING(_r_62_300_308_309_310) 
+					:o VIRT_CPU_ACCOUNTING_NATIVE(_r_62_300_308_309_311) 
+					:o VIRT_CPU_ACCOUNTING_GEN(_r_62_300_308_309_312) 
+					:o IRQ_TIME_ACCOUNTING(_r_62_300_308_309_313) 
+		:m "RCU Subsystem"(_r_62_314) 
+			:m SRCU(_r_62_314_315) 
+			:o TASKS_RCU(_r_62_314_316) 
+			:m RCU_STALL_COMMON(_r_62_314_317) 
+			:m CONTEXT_TRACKING(_r_62_314_318) 
+			:o RCU_USER_QS(_r_62_314_319) 
+			:o CONTEXT_TRACKING_FORCE(_r_62_314_320) 
+			:m RCU_FANOUT(_r_62_314_321) 
+			:m RCU_FANOUT_LEAF(_r_62_314_322) 
+			:o RCU_FANOUT_EXACT(_r_62_314_323) 
+			:o RCU_FAST_NO_HZ(_r_62_314_324) 
+			:m TREE_RCU_TRACE(_r_62_314_325) 
+			:o RCU_BOOST(_r_62_314_326) 
+			:m RCU_KTHREAD_PRIO(_r_62_314_327) 
+			:m RCU_BOOST_DELAY(_r_62_314_328) 
+			:o RCU_NOCB_CPU(_r_62_314_329) 
+			:m RCU_EXPEDITE_BOOT(_r_62_314_330) 
+			:m "RCU Implementation"(_r_62_314_331) 
+				:g (_r_62_314_331_332) [1,1] 
+					:o TREE_RCU(_r_62_314_331_332_333) 
+					:o PREEMPT_RCU(_r_62_314_331_332_334) 
+					:o TINY_RCU(_r_62_314_331_332_335) 
+					:m "Build-forced no-CBs CPUs"(_r_62_314_336) 
+						:g (_r_62_314_336_337) [1,1] 
+							:o RCU_NOCB_CPU_NONE(_r_62_314_336_337_338) 
+							:o RCU_NOCB_CPU_ZERO(_r_62_314_336_337_339) 
+							:o RCU_NOCB_CPU_ALL(_r_62_314_336_337_340) 
+		:m "Kernel Performance Events And Counters"(_r_62_341) 
+			:o PERF_EVENTS(_r_62_341_342) 
+			:o DEBUG_PERF_USE_VMALLOC(_r_62_341_343) 
+		:m "GCOV-based kernel profiling"(_r_62_344) 
+			:o GCOV_KERNEL(_r_62_344_345) 
+			:m ARCH_HAS_GCOV_PROFILE_ALL(_r_62_344_346) 
+			:o GCOV_PROFILE_ALL(_r_62_344_347) 
+			:m "Specify GCOV format"(_r_62_344_348) 
+				:g (_r_62_344_348_349) [1,1] 
+					:o GCOV_FORMAT_AUTODETECT(_r_62_344_348_349_350) 
+					:o GCOV_FORMAT_3_4(_r_62_344_348_349_351) 
+					:o GCOV_FORMAT_4_7(_r_62_344_348_349_352)	:o MODULES(_r_375) 
+	:o BLOCK(_r_397) 
+
+~_r_7 or ~_r_6
+~_r_8 or _r_6
+~_r_62_82 or _r_17
+_r_62_87 or ~_r_62_85 or ~_r_62_86
+~_r_62_87 or _r_62_85
+~_r_62_87 or _r_62_86
+~_r_62_88 or _r_62_87
+~_r_62_89 or _r_62_87
+~_r_62_98 or _r_62_96
+~_r_62_102 or _r_62_101
+~_r_62_112 or _r_62_111
+~_r_62_132 or _r_62_120
+~_r_62_135 or _r_54
+~_r_62_138 or _r_62_126
+~_r_62_140 or _r_58
+~_r_62_141 or _r_62_140
+~_r_62_142 or _r_62_121
+~_r_62_143 or _r_62_121
+~_r_62_144 or _r_62_121
+~_r_62_145 or _r_62_121
+~_r_62_146 or _r_62_121
+~_r_62_146 or _r_62_127
+~_r_62_147 or _r_17
+_r_62_163 or ~_r_62_162 or ~_r_9
+~_r_62_163 or _r_62_162
+~_r_62_163 or _r_9
+~_r_62_166 or _r_62_133
+~_r_62_194 or _r_62_193
+~_r_62_207 or _r_62_206
+~_r_62_234 or _r_62_70 or _r_62_71 or _r_62_72 or _r_62_73 or _r_62_74 or _r_62_75
+_r_62_234 or ~_r_62_70
+_r_62_234 or ~_r_62_71
+_r_62_234 or ~_r_62_72
+_r_62_234 or ~_r_62_73
+_r_62_234 or ~_r_62_74
+_r_62_234 or ~_r_62_75
+~_r_62_234_235_236 or _r_62_70
+~_r_62_234_235_237 or _r_62_71
+~_r_62_234_235_238 or _r_62_72
+~_r_62_234_235_239 or _r_62_73
+~_r_62_234_235_240 or _r_62_74
+~_r_62_234_235_241 or _r_62_75
+~_r_62_247 or _r_62_210
+~_r_62_247_248_250 or _r_62_211
+~_r_62_247_248_251 or _r_62_211
+~_r_62_252_257 or _r_62_252_256
+~_r_62_252_260 or _r_62_252_259
+~_r_62_252_260 or _r_62_145
+_r_62_252_261 or ~_r_62_252_260 or ~_r_62_77
+~_r_62_252_261 or _r_62_252_260
+~_r_62_252_261 or _r_62_77
+~_r_62_252_262 or _r_62_252_261
+~_r_62_252_264 or _r_62_252_259
+~_r_62_252_267 or _r_62_252_266
+~_r_62_252_268_269 or _r_62_252_268
+~_r_62_252_268_270 or _r_62_252_268_269
+~_r_62_252_268_271 or _r_62_252_268
+~_r_62_272_274 or _r_62_78 or _r_62_80
+_r_62_272_274 or ~_r_62_78
+_r_62_272_274 or ~_r_62_80
+~_r_62_272 or _r_62_129
+~_r_62_279_293 or _r_62_279_292
+~_r_62_279_295 or _r_62_279_293
+~_r_62_279_295 or _r_62_279_294
+~_r_62_300_302 or _r_62_129
+~_r_62_300_303 or _r_62_300_302
+~_r_62_300_305 or _r_62_300_304
+~_r_62_300_306 or _r_62_300_304
+~_r_62_300_307 or _r_62_300_306
+~_r_62_300_308_309_311 or _r_62_300_301
+_r_62_300_308_309_312 or ~_r_62_212 or ~_r_62_214
+~_r_62_300_308_309_312 or _r_62_212
+~_r_62_300_308_309_312 or _r_62_214
+~_r_62_300_308_309_312 or _r_62_300_301
+~_r_62_314_316 or _r_62_314_315
+~_r_62_314_319 or _r_62_314_318
+~_r_62_314_320 or _r_62_314_318
+~_r_62_314_328 or _r_62_314_326
+~_r_62_314_336 or _r_62_314_329
+~_r_62_341_342 or _r_62_152
+~_r_62_341_342 or _r_62_121
+~_r_62_341_342 or _r_54
+~_r_62_341_342 or _r_62_314_315
+~_r_62_341_343 or _r_62_153
+_r_62_344_347 or ~_r_62_344_345 or ~_r_62_344_346
+~_r_62_344_347 or _r_62_344_345
+~_r_62_344_347 or _r_62_344_346
+~_r_62_344_348 or _r_62_344_345
+~_r_62_96_353_355 or _r_62_96_353_354
+~_r_62_96_353_358 or _r_62_96_353_357
+~_r_62_96_353_360 or _r_62_96_353_354
+~_r_62_96_353_361_362_364 or _r_62_96_353_355
+~_r_62_96_353_361_362_365 or _r_62_96_353_355
+~_r_62_96_353_361_362_365 or _r_62_314_319
+~_r_62_96_353_361_362_365 or _r_62_314_329
+~_r_62_96_353_361_362_365 or _r_62_300_308_309_312
+~_r_62_96_353_361_362_365 or _r_54
+~_r_62_118_369 or _r_62_118
+~_r_62_118_370 or _r_62_118
+~_r_62_118_371 or _r_62_118
+~_r_62_118_372 or _r_62_118
+~_r_62_118_373 or _r_62_118
+~_r_62_118_374 or _r_62_118
+~_r_375_378 or _r_375_377
+~_r_375_381 or _r_375
+~_r_375_381 or _r_62_159
+~_r_375_382 or _r_375_381
+~_r_375_383 or _r_375_381
+~_r_375_384 or _r_375_381
+~_r_375_385 or _r_375
+~_r_375_386 or _r_375_381
+~_r_375_393 or _r_375_385
+~_r_397_398 or ~_r_6
+~_r_397_400 or _r_397_399
+~_r_397_404_407 or _r_397_404_406
+~_r_397_404_408 or _r_397_404_406
+~_r_397_404_409 or _r_397_404_406
+~_r_397_404_410 or _r_397_404_406
+~_r_397_404_411 or _r_397_404_406
+~_r_397_404_412 or _r_397_404_406
+_r_397_404_420 or ~_r_397_404_405 or ~_r_397_404_419
+~_r_397_404_420 or _r_397_404_405
+~_r_397_404_420 or _r_397_404_419
+_r_397_404_421 or ~_r_397_404_405 or ~_r_397_404_419
+~_r_397_404_421 or _r_397_404_405
+~_r_397_404_421 or _r_397_404_419
+_r_397_404_422 or ~_r_397_404_405 or ~_r_397_404_419
+~_r_397_404_422 or _r_397_404_405
+~_r_397_404_422 or _r_397_404_419
+_r_397_404_423 or ~_r_397_404_405 or ~_r_397_404_419
+~_r_397_404_423 or _r_397_404_405
+~_r_397_404_423 or _r_397_404_419
+~_r_397_404_424 or _r_397_404_405
+~_r_397_404_425 or _r_397_404_424
+~_r_397_404_429 or _r_397_404_405
+~_r_397_404_432 or _r_397_403
+~_r_10 or _r_62_166 or _r_62_341_342 or _r_62_170
+_r_10 or ~_r_62_166
+_r_10 or ~_r_62_341_342
+_r_10 or ~_r_62_170
+~_r_22 or _r_62_136
+_r_62_77 or ~_r_17 or ~_r_397
+~_r_62_77 or _r_17
+~_r_62_77 or _r_397
+_r_62_79 or ~_r_62_78 or ~_r_62_120
+~_r_62_79 or _r_62_78
+~_r_62_79 or _r_62_120
+_r_62_81 or ~_r_62_80 or ~_r_62_120
+~_r_62_81 or _r_62_80
+~_r_62_81 or _r_62_120
+~_r_62_104 or _r_62_135
+_r_62_128 or ~_r_62_122 or ~_r_62_129
+~_r_62_128 or _r_62_122
+~_r_62_128 or _r_62_129
+_r_62_162 or ~_r_62_160 or ~_r_62_164
+~_r_62_162 or _r_62_160
+~_r_62_162 or _r_62_164
+_r_62_166 or ~_r_375 or ~_r_62_177
+~_r_62_166 or _r_375
+~_r_62_166 or _r_62_177
+~_r_62_167 or _r_62_199
+_r_62_174 or ~_r_62_166 or ~_r_62_178
+~_r_62_174 or _r_62_166
+~_r_62_174 or _r_62_178
+~_r_62_175 or _r_62_195
+~_r_62_193 or _r_62_341_342
+~_r_62_242_243_246 or _r_62_278
+_r_62_252_265 or ~_r_62_341_342 or ~_r_62_252
+~_r_62_252_265 or _r_62_341_342
+~_r_62_252_265 or _r_62_252
+~_r_62_252_266 or _r_397
+~_r_62_314_321 or _r_62_314_331_332_333 or _r_62_314_331_332_334
+_r_62_314_321 or ~_r_62_314_331_332_333
+_r_62_314_321 or ~_r_62_314_331_332_334
+~_r_62_314_322 or _r_62_314_331_332_333 or _r_62_314_331_332_334
+_r_62_314_322 or ~_r_62_314_331_332_333
+_r_62_314_322 or ~_r_62_314_331_332_334
+~_r_62_314_323 or _r_62_314_331_332_333 or _r_62_314_331_332_334
+_r_62_314_323 or ~_r_62_314_331_332_333
+_r_62_314_323 or ~_r_62_314_331_332_334
+_r_62_314_326 or ~_r_58 or ~_r_62_314_331_332_334
+~_r_62_314_326 or _r_58
+~_r_62_314_326 or _r_62_314_331_332_334
+~_r_62_314_329 or _r_62_314_331_332_333 or _r_62_314_331_332_334
+_r_62_314_329 or ~_r_62_314_331_332_333
+_r_62_314_329 or ~_r_62_314_331_332_334
+~_r_62_96_353_356 or _r_62_96_353_361_362_365
+~_r_62_96_353_357 or _r_62_96_353_361_362_365
+~_r_7 or _r_62_122
+~_r_9 or _r_62_344_346
+~_r_9 or _r_62_106
+~_r_8 or ~_r_9 or _r_62_108
+~_r_8 or ~_r_9 or _r_62_109
+~_r_9 or _r_62_164
+~_r_9 or _r_62_126
+~_r_9 or _r_62_152
+~_r_9 or _r_62_176
+~_r_9 or _r_62_177
+~_r_9 or _r_62_183
+~_r_9 or _r_62_184
+~_r_9 or _r_62_178
+~_r_9 or _r_62_179
+~_r_9 or _r_62_180
+~_r_9 or _r_62_123
+~_r_9 or _r_62_182
+~_r_7 or ~_r_9 or _r_56
+~_r_9 or _r_62_172
+~_r_9 or _r_62_190
+~_r_9 or _r_62_192
+~_r_9 or _r_62_70
+~_r_9 or _r_62_71
+~_r_9 or _r_62_72
+~_r_9 or _r_62_73
+~_r_9 or _r_62_74
+~_r_9 or _r_62_75
+~_r_9 or _r_62_193
+~_r_9 or _r_62_194
+~_r_9 or _r_62_341_342
+~_r_9 or _r_62_196
+~_r_9 or _r_62_197
+~_r_9 or _r_62_198
+~_r_9 or _r_62_121
+~_r_62_242_243_245 or ~_r_9 or _r_62_202
+~_r_9 or _r_62_203
+~_r_9 or _r_62_204
+~_r_9 or _r_62_195
+~_r_9 or _r_62_225
+~_r_9 or _r_62_199
+~_r_9 or _r_62_279_299
+~_r_9 or _r_62_279_282
+~_r_9 or _r_62_279_283
+~_r_9 or _r_62_99
+~_r_9 or _r_62_279_298
+~_r_9 or _r_62_216
+~_r_8 or ~_r_9 or _r_62_217
+~_r_9 or _r_62_201
+~_r_9 or _r_62_185
+~_r_7 or ~_r_9 or _r_62_205
+~_r_9 or _r_62_208
+~_r_9 or _r_55
+~_r_9 or _r_62_100
+~_r_8 or ~_r_9 or _r_62_218
+~_r_9 or _r_62_90
+~_r_9 or _r_62_96
+~_r_9 or _r_62_91
+~_r_9 or _r_62_92
+~_r_8 or ~_r_9 or _r_62_98
+~_r_9 or _r_62_93
+~_r_8 or ~_r_9 or _r_62_212
+~_r_9 or _r_62_215
+~_r_7 or ~_r_9 or _r_62_221
+~_r_8 or ~_r_9 or _r_62_220
+~_r_7 or ~_r_9 or _r_62_226
+~_r_9 or _r_62_173
+~_r_7 or ~_r_9 or _r_62_232
+~_r_8 or ~_r_9 or _r_62_223
+~_r_9 or _r_62_210
+~_r_9 or _r_62_86
+~_r_9 or _r_62_314_315
+~_r_8 or ~_r_22 or _r_23
+~_r_62_114 or _r_62_252
+~_r_62_114 or _r_62_252_268
+~_r_62_114 or _r_62_252_268_269
+~_r_62_151 or _r_62_278
+~_r_62_279_291 or _r_62_279_292
+~_r_62_300_308_309_312 or _r_62_314_318
+
