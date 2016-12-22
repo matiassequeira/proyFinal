@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.InicioController">
+   <children>
+      <AnchorPane layoutY="-6.0" prefHeight="400.0" prefWidth="600.0" styleClass="root" stylesheets="@estilo.css" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-6.0">
+         <children>
+            <SplitPane dividerPositions="0.863063063063063" layoutX="214.0" layoutY="68.0" orientation="VERTICAL" prefHeight="532.0" prefWidth="800.0" styleClass="split-pane-divider-horizontal" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="68.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                     <children>
+                        <SplitPane dividerPositions="0.32154882154882153" layoutX="71.0" layoutY="113.0" minWidth="-Infinity" prefHeight="376.0" prefWidth="794.0" styleClass="split-pane-divider" AnchorPane.bottomAnchor="-31.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <items>
+                            <AnchorPane maxWidth="210.0" minHeight="0.0" minWidth="200.0" prefHeight="316.0" prefWidth="210.0">
+                                 <children>
+                                    <TreeView fx:id="treeView" layoutY="27.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="364.0" prefWidth="211.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <ScrollPane fx:id="scrollPane" layoutX="118.0" layoutY="88.0" prefHeight="439.0" prefWidth="545.0" styleClass="scroll" AnchorPane.bottomAnchor="27.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="0.0">
+                                       <content>
+                                          <TextArea fx:id="contenidoArchivo" prefHeight="436.0" prefWidth="543.0" />
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="171.0" prefWidth="691.0" styleClass="root">
+                     <children>
+                        <HBox layoutX="30.0" layoutY="25.0" nodeOrientation="LEFT_TO_RIGHT" spacing="15.0">
+                           <children>
+                              <Button fx:id="agregar" mnemonicParsing="false" onAction="#agregarArchivo" styleClass="button-1" text="Agregar" />
+                              <Button fx:id="eliminar" mnemonicParsing="false" onAction="#eliminarArchivo" styleClass="button-1" text="Eliminar" />
+                           </children>
+                        </HBox>
+                        <Button layoutX="676.0" layoutY="25.0" mnemonicParsing="false" onAction="#analizarArchivo" styleClass="button-1" text="Analizar" />
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+            <Text fill="WHITE" layoutX="693.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VLPS" textAlignment="RIGHT" wrappingWidth="66.00000858306885">
+               <font>
+                  <Font name="AkzidenzGroteskBQ-Medium" size="24.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
