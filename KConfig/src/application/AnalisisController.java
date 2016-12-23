@@ -65,9 +65,9 @@ public class AnalisisController implements Initializable {
 		featureTree.setCellFactory(CheckBoxTreeCell.<String>forTreeView());
 		rootItem = new CheckBoxTreeItem<String>(textoArchivo[0]);
 		for (int iteracion =1; i<textoArchivo.length; iteracion++){
-			t
-        	CheckBoxTreeItem<String> item = new CheckBoxTreeItem<String>(linea);
-			rootItem.getChildren().add(item);
+		
+        	//CheckBoxTreeItem<String> item = new CheckBoxTreeItem<String>(linea);
+			//rootItem.getChildren().add(item);
 	    }
 		featureTree.setRoot(rootItem);
 		
