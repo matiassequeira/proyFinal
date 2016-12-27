@@ -20,7 +20,7 @@ public class ClassesToSplot {
 	public  static String cadenaGlobal;	
 	public static List<If> objetosIfFaltantes = new ArrayList<>();
 
-	public String classesToSplot(Menu principal) throws Excepcion{
+	public ArrayList<String> classesToSplot(Menu principal) throws Excepcion{
 		mapConfigs_MenuConfigs = new HashMap<String, String>();
 		cadenaGlobal= ":r "+ principal.getWordQuote()+ "(_r) " + '\n';
 		cadenaGlobal+=RecurConfig.recurConfigs(principal.getConfigs(), "_r");
@@ -49,8 +49,10 @@ public class ClassesToSplot {
 			auxiliar.clear();
 			auxiliar.addAll(objetosIfFaltantes);
 		}
-		
-		return cadenaGlobal+'\n'+constraintGlobal;
+		ArrayList<String> retornar = new ArrayList<String>();
+		retornar.add(cadenaGlobal);
+		retornar.add(constraintGlobal);
+		return retornar;
 	}
 
 	public static int obtenerCantidadGuiones(String nivel) throws Excepcion {

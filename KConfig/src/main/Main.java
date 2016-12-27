@@ -1,4 +1,5 @@
 package main;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -33,13 +34,15 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-	
+		Main.analizar("C:\\Users\\Matias\\git\\proyectoFinal\\KConfig\\"+ "src\\entradasPrueba\\entrada 17-03.txt");
+	}
+	public static ArrayList<String> analizar (String path){
 		try {
 			
-			InputStream is= new FileInputStream("C:\\Users\\Matias\\git\\proyectoFinal\\KConfig\\"
-					+ "src\\entradasPrueba\\entrada 17-03.txt");
 
-			ANTLRInputStream input = new ANTLRInputStream(is);
+
+
+			ANTLRInputStream input = new ANTLRInputStream(new FileInputStream(path));
 
 			// create a lexer that feeds off of input CharStream
 			parserKConfigLexer lexer = new parserKConfigLexer(input);
@@ -59,16 +62,16 @@ public class Main {
 			
 			
 			ClassesToSplot splot = new ClassesToSplot();
-			String s= splot.classesToSplot(menu);
-			System.out.println(s);
+			ArrayList<String> treeYConstraints= splot.classesToSplot(menu);
+			return treeYConstraints;
 		  } catch(Exception e){
 			System.out.println(e);
 		  }
+		return null;
 		
 		}
-public void eliminarEstaFuncion(){
-		
-	}
+
+
 	}
 	
 

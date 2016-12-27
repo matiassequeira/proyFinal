@@ -39,7 +39,7 @@ public class Main extends Application {
 	
 	
 	public static void showAnalizar(String archivoSeleccionado) throws IOException{
-		FXMLLoader loader= new FXMLLoader(Main.class.getResource("Analisis-v1.fxml"));
+		FXMLLoader loader= new FXMLLoader(Main.class.getResource("Analisis-v2.fxml"));
 		Parent root = (Parent)loader.load();
 		
 		
