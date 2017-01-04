@@ -12,16 +12,21 @@ import modelo.Select;
 
 public class ClassesToSplot {
 
-	public static int contadorGlobal=5;
+	public static int contadorGlobal;
 	public static Map<String, String> mapConfigs_MenuConfigs;
-	public static String constraintGlobal="";
-	public static List<List<Object>> constraintDependsFaltantes= new ArrayList<List<Object>>();
-	public static List<List<Object>> constraintsSelectFaltantes= new ArrayList<List<Object>>();
+	public static String constraintGlobal;
+	public static List<List<Object>> constraintDependsFaltantes;
+	public static List<List<Object>> constraintsSelectFaltantes;
 	public  static String cadenaGlobal;	
-	public static List<If> objetosIfFaltantes = new ArrayList<>();
+	public static List<If> objetosIfFaltantes;
 
 	public ArrayList<String> classesToSplot(Menu principal) throws Excepcion{
+		contadorGlobal=5;
+		constraintGlobal="";
 		mapConfigs_MenuConfigs = new HashMap<String, String>();
+		constraintDependsFaltantes= new ArrayList<List<Object>>();
+		constraintsSelectFaltantes= new ArrayList<List<Object>>();
+		objetosIfFaltantes = new ArrayList<>();
 		cadenaGlobal= ":r "+ principal.getWordQuote()+ "(_r) " + '\n';
 		cadenaGlobal+=RecurConfig.recurConfigs(principal.getConfigs(), "_r");
 		cadenaGlobal+=RecurChoice.recurChoice(principal.getChoices(), "_r");

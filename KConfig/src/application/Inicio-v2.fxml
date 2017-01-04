@@ -6,6 +6,7 @@
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TreeView?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
@@ -23,14 +24,14 @@
                           <items>
                             <AnchorPane maxWidth="210.0" minHeight="0.0" minWidth="200.0" prefHeight="316.0" prefWidth="210.0">
                                  <children>
-                                    <TreeView fx:id="treeView" layoutY="27.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="364.0" prefWidth="211.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                    <TreeView fx:id="treeView" layoutY="27.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="364.0" prefWidth="211.0" styleClass="tree-cell" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                  </children>
                               </AnchorPane>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                                  <children>
-                                    <ScrollPane fx:id="scrollPane" layoutX="118.0" layoutY="88.0" prefHeight="466.0" prefWidth="556.0" styleClass="scroll" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <ScrollPane fx:id="scrollPane" fitToHeight="true" fitToWidth="true" layoutX="118.0" layoutY="88.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="466.0" prefWidth="556.0" styleClass="scroll" translateX="1.0" translateY="1.0" translateZ="1.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <content>
-                                          <TextArea fx:id="contenidoArchivo" prefHeight="436.0" prefWidth="543.0" />
+                                          <TextArea fx:id="contenidoArchivo" editable="false" prefHeight="444.0" prefWidth="556.0" />
                                        </content>
                                     </ScrollPane>
                                  </children>
@@ -50,16 +51,17 @@
                               <Button fx:id="eliminar" mnemonicParsing="false" onAction="#eliminarArchivo" styleClass="button-1" text="Eliminar" />
                            </children>
                         </HBox>
-                        <Button layoutX="676.0" layoutY="25.0" mnemonicParsing="false" onAction="#analizarArchivo" styleClass="button-1" text="Analizar" />
+                        <Button layoutX="676.0" layoutY="25.0" mnemonicParsing="false" onAction="#analizarArchivo" styleClass="button-1" text="Analizar" AnchorPane.rightAnchor="51.0" />
                      </children>
                   </AnchorPane>
               </items>
             </SplitPane>
-            <Text fill="WHITE" layoutX="693.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VLPS" textAlignment="RIGHT" wrappingWidth="66.00000858306885">
+            <Text fill="WHITE" layoutX="645.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VLPS" textAlignment="RIGHT" wrappingWidth="66.00000858306885" AnchorPane.rightAnchor="88.99999141693115" AnchorPane.topAnchor="20.0">
                <font>
                   <Font name="AkzidenzGroteskBQ-Medium" size="24.0" />
                </font>
             </Text>
+            <ImageView fx:id="icono" fitHeight="49.0" fitWidth="64.0" layoutX="725.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="15.0" />
          </children>
       </AnchorPane>
    </children>

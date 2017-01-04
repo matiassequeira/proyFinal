@@ -54,11 +54,12 @@ public class RecurConfig {
 	public static String recurConfigs(Choice choice, String nivel) throws Excepcion {
 		// TODO Auto-generated method stub
 		int cantidadEspacios = ClassesToSplot.obtenerCantidadGuiones(nivel);
-		String cadena="", nivelParaConfig=nivel+"_"+ ++ClassesToSplot.contadorGlobal;
+		String cadena="";
 		
 		if (!choice.getConfig().isEmpty()){
 			for (String config : choice.getConfig()) {
-				for(int i=0; i<cantidadEspacios; i++){
+				String nivelParaConfig=nivel+"_"+ ++ClassesToSplot.contadorGlobal;
+				for(int i=0; i<cantidadEspacios+1; i++){
 					cadena= cadena+'\t';
 				}
 				Config objetoConfig = Main.mapConfigs.get(config);

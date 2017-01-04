@@ -32,13 +32,13 @@ public class Main {
 	public static Map<String, MenuConfig> mapMenuConfig = new HashMap<String, MenuConfig>();
 	
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Main.analizar("C:\\Users\\Matias\\git\\proyectoFinal\\KConfig\\"+ "src\\entradasPrueba\\entrada 17-03.txt");
-	}
-	public static ArrayList<String> analizar (String path){
+		//Main.analizar("C:\\Users\\Matias\\git\\proyectoFinal\\KConfig\\"+ "src\\entradasPrueba\\entrada 17-03.txt");
+	}*/
+	public  ArrayList<String> analizar (String path){
 		try {
-			
+			menu=null;
 
 
 
@@ -70,6 +70,7 @@ public class Main {
 		return null;
 		
 		}
+	
 
 
 	}

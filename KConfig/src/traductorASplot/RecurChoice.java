@@ -29,22 +29,26 @@ public class RecurChoice {
 				for(int i=0; i<cantidadEspacios+1; i++){
 					cadena= cadena +'\t';
 				}
-				String nivgrupo= nivelChoice+"_"+ ++ClassesToSplot.contadorGlobal;
+				//String nivgrupo= nivelChoice+"_"+ ++ClassesToSplot.contadorGlobal;
 				
 				if(choice.isOptional() &&choice.getType()!= null && choice.getType().getValue()!=null && choice.getType().getValue().equals("n")){
 					if(choice.getType().getType().equals("bool")){
-						cadena= cadena+":g ("+ nivgrupo + ") [0,1] "+'\n';//es xor de 0..1
+						cadena= cadena+":g [0,1] "+'\n';//es xor de 0..1
+						//cadena= cadena+":g ("+ nivgrupo + ") [0,1] "+'\n';//es xor de 0..1
 					}
 					else if(choice.getType().getType().equals("tristate")){
-						cadena= cadena+ ":g ("+ nivgrupo + ") [0,*] "+'\n';//es or 0..*
+						cadena= cadena+ ":g [0,*] "+'\n';//es or 0..*
+						//cadena= cadena+ ":g ("+ nivgrupo + ") [0,*] "+'\n';//es or 0..*
 					}
 				}
 				else if (choice.getType()!= null){
 					if(choice.getType().getType().equals("bool")){
-						cadena= cadena+":g ("+ nivgrupo + ") [1,1] "+'\n';//es xor de 1..1
+						cadena= cadena+":g [1,1] "+'\n';//es xor de 1..1
+						//cadena= cadena+":g ("+ nivgrupo + ") [1,1] "+'\n';//es xor de 1..1
 					}
 					else if(choice.getType().getType().equals("tristate")){
-						cadena= cadena+ ":g ("+ nivgrupo + ") [1,*] "+'\n';//es or 1..*
+						cadena= cadena+ ":g [1,*] "+'\n';//es or 1..*
+						//cadena= cadena+ ":g ("+ nivgrupo + ") [1,*] "+'\n';//es or 1..*
 					}
 				}
 				else {
@@ -55,10 +59,12 @@ public class RecurChoice {
 					ArmadorConstraints.armarConstraintDepends(nivelChoice,choice.getDepends());
 				}
 				
-				cadena += RecurConfig.recurConfigs(choice,nivgrupo);
+				cadena += RecurConfig.recurConfigs(choice,nivelChoice);
+				//cadena += RecurConfig.recurConfigs(choice,nivgrupo);
 				
 				if(!choice.getChoice().isEmpty()){
-					cadena += recurChoice(choice.getChoice(), nivgrupo);
+					cadena += recurChoice(choice.getChoice(), nivelChoice);
+					//cadena += recurChoice(choice.getChoice(), nivgrupo);
 				}
 			}
 		}

@@ -3,7 +3,6 @@ package application;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -19,7 +18,7 @@ public class GestionarArchivo {
 		fileChooser.setInitialDirectory(new File("C:/Users/USUARIO/Google Drive/Proyecto Gonzalez-Sequeira/Proyecto/Ejemplos KConfig"));
 		FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt");
         fileChooser.getExtensionFilters().add(extFilter);
-		File file=fileChooser.showOpenDialog(Main.primaryStage);
+		File file=fileChooser.showOpenDialog(MainInterfaz.primaryStage);
 		return file;
 		
 	}
@@ -29,6 +28,7 @@ public class GestionarArchivo {
 		while ((line = r.readLine()) != null) {
 		    s += line +'\n';
 		}
+		r.close();
 		return s;
 	}
 	public static ArrayList<String> toList(File file) throws IOException{
@@ -42,10 +42,10 @@ public class GestionarArchivo {
 	}
 	public static File guardar(String texto, String nombre, String extension) throws IOException{
 		BufferedWriter bw;
-		File destino = new File("src/archivos/" + nombre+ extension);
-			bw = new BufferedWriter(new FileWriter(destino));
-			bw.write(texto);
-			bw.close();
+		File destino = new File(nombre+ extension);
+		bw = new BufferedWriter(new FileWriter(destino));
+		bw.write(texto);
+		bw.close();
 		
 		return destino;
 	}
