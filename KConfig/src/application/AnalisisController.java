@@ -9,40 +9,39 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
 
-import javax.swing.event.ChangeListener;
-
-import javafx.beans.value.ObservableValue;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.CheckBoxTreeItem;
 import javafx.scene.control.CheckBoxTreeItem.TreeModificationEvent;
 import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.TreeCell;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.control.cell.CheckBoxTreeCell;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.input.TouchEvent;
-import javafx.util.Callback;
 import main.Main;
 import splar.samples.ItemFeature;
 import splar.samples.SATConfigurationExample;
 import splar.samples.SATReasoningExample;
 
 public class AnalisisController implements Initializable {
+	
+	@FXML
+	private Label labelConfParcial;
+	@FXML
+	private Label labelAutocompletar;
+	@FXML
+	private Label labelParcial;
+	@FXML
+	private Label labelCantidadConf;
 	@FXML
 	private CheckBox checkAutocompletar;
+	@FXML
+	private CheckBox checkConfParcial;
 	@FXML
 	private TreeView<ItemFeature> featureTree;
 	private CheckBoxTreeItem<ItemFeature> rootItem;	
@@ -67,12 +66,20 @@ public class AnalisisController implements Initializable {
 	private Label configuracionesPosibles;
 	@FXML
 	private ImageView icono;
+	@FXML
+	private Button validarProducto; 
 	
 	private boolean habilitarSelect;
 	private boolean indefinido;
 	private boolean autocompletar;
 	
 	public void cargarAnalisis(String archivoSeleccionado) throws IOException  {
+		labelAutocompletar.setVisible(false);
+		labelConfParcial.setVisible(false);
+		labelParcial.setVisible(false);
+		validarProducto.setDisable(true);
+		checkAutocompletar.setDisable(true);
+		checkConfParcial.setDisable(true);
 		Image image = new Image(new File("src/imagen/iconoRec.png").toURI().toString());
 		 icono.setImage(image);
 		this.archivoSeleccionado= archivoSeleccionado;
@@ -99,6 +106,7 @@ public class AnalisisController implements Initializable {
 		rootItem = new CheckBoxTreeItem<ItemFeature>(root);
 		
 		rootItem.setIndependent(true);
+		rootItem.setIndeterminate(true);
 		mapaItemFeature.put(obtenerClave(textoArchivo[0]),root);
 		armarArbolRecursivo(textoArchivo, rootItem, 1);
 		
@@ -202,7 +210,7 @@ public class AnalisisController implements Initializable {
 			ItemFeature itemFeature = new ItemFeature(textoArchivo[i], obtenerClave(textoArchivo[i]));
 			mapaItemFeature.put(obtenerClave(textoArchivo[i]),itemFeature);
 			CheckBoxTreeItem<ItemFeature> item = new CheckBoxTreeItem<ItemFeature>(itemFeature);
-			//item.setIndependent(true);
+			
 			//ImageView mv = new ImageView();
 			//Image img =new Image("src/imagen/Cruz_Roja.png", true);
             //mv.setImage(new Image(new File("src/imagen/Cruz_Roja.png").toURI().toString()));
@@ -265,7 +273,7 @@ public class AnalisisController implements Initializable {
 		
 		ItemFeature itemFeature =nodo.getValue();
 		
-		nodoCopia.setIndependent(true);
+		nodoCopia.setIndependent(nodo.isIndependent());
 		if (itemFeature.getEstado()=="indefinido")
 			nodoCopia.setIndeterminate(true);
 		else if(itemFeature.getEstado()=="seleccionado")
@@ -290,13 +298,23 @@ public class AnalisisController implements Initializable {
 		int[] analisis=sat.run("src/archivosSalida/salida"+archivoSeleccionado+".xml");
 		if(analisis[0]==1){
 			modelo.setText("Consistente");
+			validarProducto.setDisable(false);
+			checkAutocompletar.setDisable(false);
+			checkConfParcial.setDisable(false);
+			
 		}else{
 			modelo.setText("Inconsistente");
+			validarProducto.setDisable(true);
+			checkAutocompletar.setDisable(true);
+			checkConfParcial.setDisable(true);
+			
 		}
 	
 		caracteristicasComunes.setText(""+analisis[1]);
 		caracteristicasMuertas.setText(""+analisis[2]);
 		configuracionesPosibles.setText(""+analisis[3]);
+		
+		//configuracionesPosibles.setText(new BDDReasoningExample().configuracionesPosibles("src/archivosSalida/salida"+archivoSeleccionado+".xml", mapaItemFeature));
 		
 		for(String clave: sat.getCaracteristicasMuertas()){
 			mapaItemFeature.get(clave).setDisable(true);
@@ -310,7 +328,7 @@ public class AnalisisController implements Initializable {
 	
 	public void itemSeleccionado(ItemFeature item){
 		if(item.getEstado()!="indefinido"){
-			SATConfigurationExample.select("src/archivos/salida"+archivoSeleccionado+".xml", item, mapaItemFeature);
+			SATConfigurationExample.select("src/archivosSalida/salida"+archivoSeleccionado+".xml", item, mapaItemFeature);
 			habilitarSelect=false;
 			rootItem=actualizarArbol(rootItem);
 			setEventoArbol();
@@ -327,39 +345,99 @@ public class AnalisisController implements Initializable {
 	}
 	@FXML
 	public void validarProducto(){
-		ArrayList<ItemFeature> listaContradicciones=SATConfigurationExample.validarSelecciones("src/archivosSalida/salida"+archivoSeleccionado+".xml", mapaItemFeature);
-		String texto="";
-		if(listaContradicciones.size()==0){
-			configProducto.setText("Configuaración de producto válida");
+		if(checkConfParcial.isSelected()){
+			validarProductoParcial();
 		}
 		else{
-			configProducto.setText("Configuaración de producto inválida \n");
+			validarProductoTotal();
+		}
+	}
+	public void validarProductoParcial(){
+		SATReasoningExample sat= new SATReasoningExample();
+		configuracionesPosibles.setText(sat.configuracionesPosibles("src/archivosSalida/salida"+archivoSeleccionado+".xml", mapaItemFeature));
+		ArrayList<ItemFeature> listaContradicciones=SATConfigurationExample.validarConfiguracionParcial("src/archivosSalida/salida"+archivoSeleccionado+".xml", mapaItemFeature);
+		String texto="";
+		contradicciones.setText("");
+		if(listaContradicciones.size()==0){
+			configProducto.setText("Configuración PARCIAL del producto válida");
+			
+		}
+		else{
+			configProducto.setText("Configuración PARCIAL del producto inválida \n");
 			contradicciones.setText(listaContradicciones.size()+" contradicciones");
+			
+			String conflictos="";
+			for (ItemFeature itemFeature : listaContradicciones) {	
+				conflictos+="\n	- "+itemFeature.getFeature();
+			}
+			
+			texto+=("\nCaracterísticas conflictivas:" + conflictos);
+			
+		}
+		
+		
+		resultadoValidarProducto.setText(texto);
+		
+	}
+	public void validarProductoTotal(){
+		ArrayList<ItemFeature> listaContradicciones=SATConfigurationExample.validarSelecciones("src/archivosSalida/salida"+archivoSeleccionado+".xml", mapaItemFeature);
+		String texto="";
+		contradicciones.setText("");
+		if(listaContradicciones.size()==0){
+			configProducto.setText("Configuración de producto válida");
+			
+		}
+		else{
+			configProducto.setText("Configuración de producto inválida \n");
+			contradicciones.setText(" "+listaContradicciones.size()+" contradicciones");
 			String seleccionar="";
 			String desmarcar="";
 			for (ItemFeature itemFeature : listaContradicciones) {
 				if(itemFeature.getSeleccionado()=="noSeleccionado")
-					desmarcar+="\n	-"+itemFeature.getFeature();
+					desmarcar+="\n	- "+itemFeature.getFeature();
 				else if(itemFeature.getSeleccionado()=="seleccionado")
-					seleccionar+="\n	-"+itemFeature.getFeature();
+					seleccionar+="\n	- "+itemFeature.getFeature();
 			}
-			texto+=("Para solucionar conflictos \n Características que deben seleccionarse:" + seleccionar);
-			texto+=("\nCaracterísticas que no deben seleccionarse:" + desmarcar);
+			texto+=("Características que deben seleccionarse:\n" + seleccionar);
+			texto+=("\nCaracterísticas que no deben seleccionarse:\n" + desmarcar);
 			
 		}
+		
+		ArrayList<ItemFeature> choiceIncorrectas =verificarChoice(rootItem);
+		
+		if(choiceIncorrectas.size()!=0){
+			texto+="\nSe debe seleccionar una característica de las siguientes Choices:";
+			for(ItemFeature choice: choiceIncorrectas){
+				texto+=("\n		- "+ choice.getFeature());
+			}
+		}
+		
+		
 		resultadoValidarProducto.setText(texto);
+		
 	}
 	@FXML
 	public void configuracionParcial(){
-		
+		if(checkConfParcial.isSelected()){
+			
+			labelConfParcial.setVisible(true);
+			labelParcial.setVisible(true);
+			labelCantidadConf.setText("Cantidad de configuraciones");
+		}
+		else{	
+			labelConfParcial.setVisible(false);
+			labelParcial.setVisible(false);
+		}
 	}
 	@FXML
 	public void autocompletar(){
 		if(checkAutocompletar.isSelected()){
 			autocompletar=true;
+			labelAutocompletar.setVisible(true);
 		}
-		else
+		else{
 			autocompletar=false;
+			labelAutocompletar.setVisible(false);}
 	}
 	@FXML
 	public void inicio(){
@@ -433,4 +511,34 @@ public class AnalisisController implements Initializable {
         });
 	}
 	
+	public ArrayList<ItemFeature> verificarChoice(CheckBoxTreeItem<ItemFeature> nodo){
+		ArrayList<ItemFeature> listaChoiceIncorrectas = new ArrayList<ItemFeature>();
+		
+		
+		ItemFeature itemFeature =nodo.getValue();
+		
+		if(itemFeature.getClave()=="" && itemFeature.getFeature().indexOf("[1")!=-1){
+			boolean correcto =false;
+			for(TreeItem<ItemFeature> nodoHijo: nodo.getChildren()){
+				if(nodoHijo.getValue().getEstado()=="seleccionado"){
+					correcto=true;
+					break;
+				}
+				
+			}
+			if(!correcto){
+				listaChoiceIncorrectas.add(nodo.getParent().getValue());
+			}
+		}
+		
+		
+		
+		for(TreeItem<ItemFeature> nodoHijo: nodo.getChildren()){
+			listaChoiceIncorrectas.addAll(verificarChoice((CheckBoxTreeItem<ItemFeature>)nodoHijo));
+			
+		}
+		
+		return listaChoiceIncorrectas;
+		
+	}
 }

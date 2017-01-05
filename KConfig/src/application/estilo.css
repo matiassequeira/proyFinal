@@ -98,18 +98,17 @@
     -fx-font: 13px "Verdana";    
     -fx-border-insets: 0;
 }
-
-
-
 .tree-cell {
-  -fx-background-color: white;
+  -fx-background-color: #57BDC2;
   -fx-font-family: 10 pt "Verdana";
-  -fx-text-fill: #46494a;
+  -fx-text-fill: white;
   
 }
 .tree-cell:selected {
-    -fx-background-color: #57BDC2;
+    -fx-background-color: #46494a;
 }
+
+
 .label {
 	-fx-text-fill: #46494a;
     -fx-font: 10pt "Segoe UI Semibold"; 
@@ -120,6 +119,16 @@
     -fx-font: 10pt "Segoe UI Semibold"; 
     -fx-opacity: 1; 
 }
+.label-rosa{
+	-fx-text-fill: #E86752;
+    -fx-font: 10pt "Segoe UI Semibold"; 
+    -fx-opacity: 1; 
+}
+.label-blanco{
+	-fx-text-fill: white;
+    -fx-font: 10pt "Segoe UI Semibold"; 
+    -fx-opacity: 1; 
+}
 .label-header {
     -fx-font-size: 18 pt;
     -fx-font-family: "Segoe UI";
@@ -127,9 +136,12 @@
     -fx-opacity: 1;
 }
 .text-area {
+  -fx-background-color: #F4F4F4;
   -fx-font-family: "Verdana";
   -fx-text-fill: #46494a;
+  
 }
+
 .alert {
 	-fx-background-color: #999c9c;
 }
@@ -141,4 +153,5 @@
  * gris oscuro: #46494a 2D2D2D
  * blanco
  * gris claro: #999c9c 959697
+ * rosa : #E86752
  * */

@@ -48,10 +48,21 @@ public class InicioController implements Initializable {
 	private ImageView icono;
 	
 	public void inicializar() {
+		validar.setDisable(true);
+		eliminar.setDisable(true);
 		 Image image = new Image(new File("src/imagen/iconoRec.png").toURI().toString());
 		 icono.setImage(image);
+		 ImageView mv = new ImageView();
+		 Image img = new Image(new File("src/imagen/carpeta7.png").toURI().toString());
+		 mv.setFitHeight(25.0);
+		 mv.setFitWidth(25.0);
+				
+		 
+         mv.setImage(img);
+         
 		rootItem = new TreeItem<>("Archivos");
 		rootItem.setExpanded(true);
+		rootItem.setGraphic(mv);
         File folder = new File("src/archivos/");
         File[] listOfFiles = folder.listFiles(); 
 
@@ -75,12 +86,21 @@ public class InicioController implements Initializable {
 					System.out.println("Selected Text : "
 							+ selectedItem.getValue());
 					try {
-						File archivoMostrar = new File("src/archivos/"
-								+ selectedItem.getValue());
-						String stringArchivo = GestionarArchivo
-								.toString(archivoMostrar);
-					
-						contenidoArchivo.setText(stringArchivo);
+						if(selectedItem.getValue()!="Archivos"){
+							File archivoMostrar = new File("src/archivos/"
+									+ selectedItem.getValue());
+							String stringArchivo = GestionarArchivo
+									.toString(archivoMostrar);
+						
+							contenidoArchivo.setText(stringArchivo);
+							validar.setDisable(false);
+							eliminar.setDisable(false);
+						
+						}
+						else{
+							validar.setDisable(true);
+							eliminar.setDisable(true);
+						}
 
 					} catch (Exception e) {
 

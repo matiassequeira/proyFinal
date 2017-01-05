@@ -31,7 +31,7 @@ public class RecurChoice {
 				}
 				//String nivgrupo= nivelChoice+"_"+ ++ClassesToSplot.contadorGlobal;
 				
-				if(choice.isOptional() &&choice.getType()!= null && choice.getType().getValue()!=null && choice.getType().getValue().equals("n")){
+				if(choice.isOptional() &&choice.getType()!= null && choice.getType().getValue()!=null && !(Boolean)choice.getType().getValue()){
 					if(choice.getType().getType().equals("bool")){
 						cadena= cadena+":g [0,1] "+'\n';//es xor de 0..1
 						//cadena= cadena+":g ("+ nivgrupo + ") [0,1] "+'\n';//es xor de 0..1

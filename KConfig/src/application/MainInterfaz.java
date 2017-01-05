@@ -33,6 +33,8 @@ public class MainInterfaz extends Application {
 			scene.getStylesheets().add(getClass().getResource("estilo.css").toExternalForm());
 			Image image = new Image(new File("src/imagen/iconoRec.png").toURI().toString());
 			
+			primaryStage.setTitle("Variabilidad de Líneas de Productos de Software");
+			
 			primaryStage.setScene(scene);
 			primaryStage.getIcons().add(image);
 			primaryStage.show();
