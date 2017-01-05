@@ -1,0 +1,19 @@
+choice
+	prompt "frame"
+config _frame_aluminium
+	bool
+	select _frame_carbon
+config _frame_carbon
+	bool
+	select _frame_aluminium
+endchoice
+choice
+	optional
+	prompt "pedal"
+	default n
+config _pedal_pedalb
+	tristate
+	select _frame_carbon
+config _pedal_pedala
+	tristate
+endchoice
