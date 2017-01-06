@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
 
+import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -273,25 +274,40 @@ public class AnalisisController implements Initializable {
 		
 		ItemFeature itemFeature =nodo.getValue();
 		
-		nodoCopia.setIndependent(nodo.isIndependent());
+		nodoCopia.setIndependent(true);
+		
+		
+		
+		for(TreeItem<ItemFeature> nodoHijo: nodo.getChildren()){
+			nodoCopia.getChildren().add(actualizarArbol((CheckBoxTreeItem<ItemFeature>)nodoHijo));
+			nodoCopia.setExpanded(nodo.isExpanded());
+			
+		}
+		if(nodosHijosSeleccionados(nodoCopia.getChildren())){
+			
+			itemFeature.setEstado("seleccionado");
+		}	
 		if (itemFeature.getEstado()=="indefinido")
 			nodoCopia.setIndeterminate(true);
 		else if(itemFeature.getEstado()=="seleccionado")
 			nodoCopia.setSelected(true);
 		else
 			nodoCopia.setSelected(false);
-		
-		
-		for(TreeItem<ItemFeature> nodoHijo: nodo.getChildren()){
-			nodoCopia.getChildren().add(actualizarArbol((CheckBoxTreeItem<ItemFeature>)nodoHijo));
-			nodoCopia.setExpanded(nodo.isExpanded());
-		}
-		
 		return nodoCopia;
 		
 	}
 	
 	
+	private boolean nodosHijosSeleccionados(
+			ObservableList<TreeItem<ItemFeature>> children) {
+		for(TreeItem<ItemFeature> nodoHijo: children){
+			if(nodoHijo.getValue().getEstado()=="seleccionado"){
+				return true;
+			}
+		}
+		return false;
+	}
+
 	@FXML
 	private void cargarDatos() {
 		SATReasoningExample sat= new SATReasoningExample();
@@ -398,8 +414,8 @@ public class AnalisisController implements Initializable {
 				else if(itemFeature.getSeleccionado()=="seleccionado")
 					seleccionar+="\n	- "+itemFeature.getFeature();
 			}
-			texto+=("Características que deben seleccionarse:\n" + seleccionar);
-			texto+=("\nCaracterísticas que no deben seleccionarse:\n" + desmarcar);
+			texto+=("Características que deben seleccionarse:" + seleccionar);
+			texto+=("\nCaracterísticas que no deben seleccionarse:" + desmarcar);
 			
 		}
 		
@@ -466,7 +482,7 @@ public class AnalisisController implements Initializable {
 		CheckBoxTreeItem<ItemFeature> rootCopia= actualizarArbol(rootItem);
 		rootItem=rootCopia;
 		//rootCopia.setExpanded(true)
-		featureTree.refresh();
+		//featureTree.refresh();
 		featureTree.setRoot(rootItem);
 		setEventoArbol();
 		

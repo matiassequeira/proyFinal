@@ -15,7 +15,7 @@ public class GestionarArchivo {
 	public static File fileChooser() {
 		FileChooser fileChooser = new FileChooser();
 		fileChooser.setTitle("Seleccionar archivo");
-		fileChooser.setInitialDirectory(new File("C:/Users/USUARIO/Google Drive/Proyecto Gonzalez-Sequeira/Proyecto/Ejemplos KConfig"));
+		//fileChooser.setInitialDirectory(new File("C:/Users/USUARIO/Google Drive/Proyecto Gonzalez-Sequeira/Proyecto/Ejemplos KConfig"));
 		FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt");
         fileChooser.getExtensionFilters().add(extFilter);
 		File file=fileChooser.showOpenDialog(MainInterfaz.primaryStage);

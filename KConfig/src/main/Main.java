@@ -38,7 +38,7 @@ public class Main {
 	}*/
 	public  ArrayList<String> analizar (String path){
 		try {
-			menu=null;
+			//menu=null;
 
 
 

@@ -21,14 +21,14 @@
               <items>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                      <children>
-                        <SplitPane dividerPositions="0.32154882154882153" layoutX="71.0" layoutY="113.0" minWidth="-Infinity" prefHeight="376.0" prefWidth="794.0" styleClass="split-pane-divider" AnchorPane.bottomAnchor="-31.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <SplitPane dividerPositions="0.32154882154882153" layoutX="71.0" layoutY="113.0" maxHeight="376.0" minHeight="376.0" minWidth="-Infinity" prefHeight="376.0" prefWidth="794.0" styleClass="split-pane-divider" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                           <items>
-                            <AnchorPane maxWidth="210.0" minHeight="0.0" minWidth="200.0" prefHeight="316.0" prefWidth="210.0">
+                            <AnchorPane maxHeight="500.0" maxWidth="210.0" minHeight="0.0" minWidth="200.0" prefHeight="316.0" prefWidth="210.0">
                                  <children>
                                     <TreeView fx:id="treeView" layoutY="27.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="364.0" prefWidth="211.0" styleClass="tree-cell-inicio" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                  </children>
                               </AnchorPane>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                            <AnchorPane maxHeight="500.0" minHeight="160.0" minWidth="100.0" prefHeight="160.0" prefWidth="100.0">
                                  <children>
                                     <ScrollPane fx:id="scrollPane" fitToHeight="true" fitToWidth="true" layoutX="118.0" layoutY="88.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="466.0" prefWidth="556.0" styleClass="scroll" translateX="1.0" translateY="1.0" translateZ="1.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <content>

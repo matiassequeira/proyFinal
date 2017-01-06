@@ -18,12 +18,17 @@ public class RecurChoice {
 					cadena= cadena+'\t';
 				}
 				String nivelChoice= nivel+"_"+ ++ClassesToSplot.contadorGlobal;	
-				
+				if(choice.isOptional() &&choice.getType()!= null && choice.getType().getValue()!=null && !(Boolean)choice.getType().getValue()){
+					cadena+=":o ";
+				}
+				else
+					cadena+=":m ";
+
 				if (choice.getPrompt()!=null){
-					cadena+=":m "+choice.getPrompt().getPrompt()+"("+nivelChoice+") "+ '\n';
+					cadena+=choice.getPrompt().getPrompt()+"("+nivelChoice+") "+ '\n';
 				}
 				else{
-					cadena+=":m choice"+"("+nivelChoice+") "+ '\n';
+					cadena+="choice"+"("+nivelChoice+") "+ '\n';
 				}
 				
 				for(int i=0; i<cantidadEspacios+1; i++){
