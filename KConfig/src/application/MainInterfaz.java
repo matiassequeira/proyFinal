@@ -30,11 +30,13 @@ public class MainInterfaz extends Application {
 			inicioController.inicializar();
 			
 			scene = new Scene(root,800,600);
+			
 			scene.getStylesheets().add(getClass().getResource("estilo.css").toExternalForm());
 			Image image = new Image(new File("src/imagen/iconoRec.png").toURI().toString());
 			
 			primaryStage.setTitle("Variabilidad de Líneas de Productos de Software");
-			
+			primaryStage.setMinHeight(450);
+			primaryStage.setMinWidth(500);
 			primaryStage.setScene(scene);
 			primaryStage.getIcons().add(image);
 			primaryStage.show();
