@@ -58,7 +58,9 @@ public class AnalisisController implements Initializable {
 	@FXML
 	private Label contradicciones;
 	@FXML
-	private Label modelo;
+	private Label modeloConsistente;
+	@FXML
+	private Label modeloInconsistente;
 	@FXML
 	private Label caracteristicasComunes;	
 	@FXML
@@ -313,13 +315,15 @@ public class AnalisisController implements Initializable {
 		SATReasoningExample sat= new SATReasoningExample();
 		int[] analisis=sat.run("src/archivosSalida/salida"+archivoSeleccionado+".xml");
 		if(analisis[0]==1){
-			modelo.setText("Consistente");
+			modeloInconsistente.setText("");
+			modeloConsistente.setText("Consistente");
 			validarProducto.setDisable(false);
 			checkAutocompletar.setDisable(false);
 			checkConfParcial.setDisable(false);
 			
 		}else{
-			modelo.setText("Inconsistente");
+			modeloConsistente.setText("");
+			modeloInconsistente.setText("Inconsistente");
 			validarProducto.setDisable(true);
 			checkAutocompletar.setDisable(true);
 			checkConfParcial.setDisable(true);
@@ -438,7 +442,7 @@ public class AnalisisController implements Initializable {
 			
 			labelConfParcial.setVisible(true);
 			labelParcial.setVisible(true);
-			labelCantidadConf.setText("Cantidad de configuraciones");
+			//labelCantidadConf.setText("Cantidad de configuraciones");
 		}
 		else{	
 			labelConfParcial.setVisible(false);
