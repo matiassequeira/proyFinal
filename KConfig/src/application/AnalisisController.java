@@ -36,7 +36,7 @@ public class AnalisisController implements Initializable {
 	@FXML
 	private Label labelAutocompletar;
 	@FXML
-	private Label labelParcial;
+	private Label caracteristicasOpcionales;
 	@FXML
 	private Label labelCantidadConf;
 	@FXML
@@ -79,7 +79,7 @@ public class AnalisisController implements Initializable {
 	public void cargarAnalisis(String archivoSeleccionado) throws IOException  {
 		labelAutocompletar.setVisible(false);
 		labelConfParcial.setVisible(false);
-		labelParcial.setVisible(false);
+		
 		validarProducto.setDisable(true);
 		checkAutocompletar.setDisable(true);
 		checkConfParcial.setDisable(true);
@@ -341,6 +341,7 @@ public class AnalisisController implements Initializable {
 	
 		caracteristicasComunes.setText(""+analisis[1]);
 		caracteristicasMuertas.setText(""+analisis[2]);
+		caracteristicasOpcionales.setText(""+analisis[4]);
 		if(checkConfParcial.isSelected())
 			configuracionesPosibles.setText(sat.configuracionesPosibles("/archivosSalida/salida"+archivoSeleccionado+".xml", mapaItemFeature));
 		else
@@ -463,7 +464,6 @@ public class AnalisisController implements Initializable {
 		}
 		else{	
 			labelConfParcial.setVisible(false);
-			labelParcial.setVisible(false);
 			labelCantidadConf.setText("configuraciones:");
 		}
 	}
