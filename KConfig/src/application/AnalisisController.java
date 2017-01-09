@@ -83,11 +83,11 @@ public class AnalisisController implements Initializable {
 		validarProducto.setDisable(true);
 		checkAutocompletar.setDisable(true);
 		checkConfParcial.setDisable(true);
-		Image image = new Image(new File("src/imagen/iconoRec.png").toURI().toString());
+		Image image = new Image(new File(getClass().getResource("/imagen/iconoRec.png").getPath()).toURI().toString());
 		 icono.setImage(image);
 		this.archivoSeleccionado= archivoSeleccionado;
 		Main main= new Main();
-		ArrayList<String> treeYConstraints= main.analizar("src/archivos/"+archivoSeleccionado);
+		ArrayList<String> treeYConstraints= main.analizar("/archivos/"+archivoSeleccionado);
 		
 		//String textoTreeConstraints = treeYConstraints.get(0)+treeYConstraints.get(1);
 		String contenidoArchivoXML= "<feature_model name='Analisis variabilidad'>"+'\n'+"<feature_tree>";
@@ -100,7 +100,7 @@ public class AnalisisController implements Initializable {
 		}
 		contenidoArchivoXML+="</constraints>"+'\n'+"</feature_model>";
 		
-		GestionarArchivo.guardar(contenidoArchivoXML, "src/archivosSalida/salida"+archivoSeleccionado,".xml");
+		new GestionarArchivo().guardar(contenidoArchivoXML, "/archivosSalida/salida"+archivoSeleccionado,".xml");
 		
 		
 		// Completar arbol
@@ -322,7 +322,7 @@ public class AnalisisController implements Initializable {
 	@FXML
 	private void cargarDatos() {
 		SATReasoningExample sat= new SATReasoningExample();
-		int[] analisis=sat.run("src/archivosSalida/salida"+archivoSeleccionado+".xml");
+		int[] analisis=sat.run("/archivosSalida/salida"+archivoSeleccionado+".xml");
 		if(analisis[0]==1){
 			modeloInconsistente.setText("");
 			modeloConsistente.setText("Consistente");
@@ -342,7 +342,7 @@ public class AnalisisController implements Initializable {
 		caracteristicasComunes.setText(""+analisis[1]);
 		caracteristicasMuertas.setText(""+analisis[2]);
 		if(checkConfParcial.isSelected())
-			configuracionesPosibles.setText(sat.configuracionesPosibles("src/archivosSalida/salida"+archivoSeleccionado+".xml", mapaItemFeature));
+			configuracionesPosibles.setText(sat.configuracionesPosibles("/archivosSalida/salida"+archivoSeleccionado+".xml", mapaItemFeature));
 		else
 			configuracionesPosibles.setText(""+analisis[3]);
 		
@@ -360,7 +360,8 @@ public class AnalisisController implements Initializable {
 	
 	public void itemSeleccionado(ItemFeature item){
 		if(item.getEstado()!="indefinido"){
-			SATConfigurationExample.select("src/archivosSalida/salida"+archivoSeleccionado+".xml", item, mapaItemFeature);
+			SATConfigurationExample sATConfigurationExample = new SATConfigurationExample();
+			sATConfigurationExample.select("/archivosSalida/salida"+archivoSeleccionado+".xml", item, mapaItemFeature);
 			habilitarSelect=false;
 			rootItem=actualizarArbol(rootItem);
 			setEventoArbol();
@@ -386,8 +387,9 @@ public class AnalisisController implements Initializable {
 	}
 	public void validarProductoParcial(){
 		SATReasoningExample sat= new SATReasoningExample();
-		configuracionesPosibles.setText(sat.configuracionesPosibles("src/archivosSalida/salida"+archivoSeleccionado+".xml", mapaItemFeature));
-		ArrayList<ItemFeature> listaContradicciones=SATConfigurationExample.validarConfiguracionParcial("src/archivosSalida/salida"+archivoSeleccionado+".xml", mapaItemFeature);
+		configuracionesPosibles.setText(sat.configuracionesPosibles("/archivosSalida/salida"+archivoSeleccionado+".xml", mapaItemFeature));
+		SATConfigurationExample sATConfigurationExample = new SATConfigurationExample();
+		ArrayList<ItemFeature> listaContradicciones=sATConfigurationExample.validarConfiguracionParcial("/archivosSalida/salida"+archivoSeleccionado+".xml", mapaItemFeature);
 		String texto="";
 		contradicciones.setText("");
 		if(listaContradicciones.size()==0){
@@ -412,7 +414,8 @@ public class AnalisisController implements Initializable {
 		
 	}
 	public void validarProductoTotal(){
-		ArrayList<ItemFeature> listaContradicciones=SATConfigurationExample.validarSelecciones("src/archivosSalida/salida"+archivoSeleccionado+".xml", mapaItemFeature);
+		SATConfigurationExample sATConfigurationExample = new SATConfigurationExample();
+		ArrayList<ItemFeature> listaContradicciones=sATConfigurationExample.validarSelecciones("/archivosSalida/salida"+archivoSeleccionado+".xml", mapaItemFeature);
 		String texto="";
 		contradicciones.setText("");
 		if(listaContradicciones.size()==0){

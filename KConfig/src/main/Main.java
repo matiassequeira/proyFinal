@@ -42,7 +42,7 @@ public class Main {
 
 
 
-			ANTLRInputStream input = new ANTLRInputStream(new FileInputStream(path));
+			ANTLRInputStream input = new ANTLRInputStream(new FileInputStream(getClass().getResource(path).getPath()));
 
 			// create a lexer that feeds off of input CharStream
 			parserKConfigLexer lexer = new parserKConfigLexer(input);

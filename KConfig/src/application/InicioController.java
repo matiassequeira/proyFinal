@@ -50,10 +50,10 @@ public class InicioController implements Initializable {
 	public void inicializar() {
 		validar.setDisable(true);
 		eliminar.setDisable(true);
-		 Image image = new Image(new File("src/imagen/iconoRec.png").toURI().toString());
+		 Image image = new Image(new File(getClass().getResource("/imagen/iconoRec.png").getPath()).toURI().toString());
 		 icono.setImage(image);
 		 ImageView mv = new ImageView();
-		 Image img = new Image(new File("src/imagen/carpeta7.png").toURI().toString());
+		 Image img = new Image(new File(getClass().getResource("/imagen/carpeta7.png").getPath()).toURI().toString());
 		 mv.setFitHeight(25.0);
 		 mv.setFitWidth(25.0);
 				
@@ -63,7 +63,7 @@ public class InicioController implements Initializable {
 		rootItem = new TreeItem<>("Archivos");
 		rootItem.setExpanded(true);
 		rootItem.setGraphic(mv);
-        File folder = new File("src/archivos/");
+        File folder = new File(getClass().getResource("/archivos/").getPath());
         File[] listOfFiles = folder.listFiles(); 
 
         for (File file: listOfFiles){
@@ -87,8 +87,7 @@ public class InicioController implements Initializable {
 							+ selectedItem.getValue());
 					try {
 						if(selectedItem.getValue()!="Archivos"){
-							File archivoMostrar = new File("src/archivos/"
-									+ selectedItem.getValue());
+							File archivoMostrar = new File(getClass().getResource("/archivos/"+selectedItem.getValue()).getPath());
 							String stringArchivo = GestionarArchivo
 									.toString(archivoMostrar);
 						
@@ -121,7 +120,7 @@ public class InicioController implements Initializable {
 		contenidoArchivo.setText(textoArchivo);
 
 		
-		GestionarArchivo.guardar(textoArchivo, "src/archivos/"+file.getName(),"");
+		new GestionarArchivo().guardar(textoArchivo, "/archivos/"+file.getName(),"");
 
 		TreeItem<String> item = new TreeItem<>(file.getName());
 		rootItem.getChildren().add(item);
@@ -146,19 +145,22 @@ public class InicioController implements Initializable {
 		confirmacion.setTitle("Confirmación");
 		confirmacion.setHeaderText("Eliminar");
 		confirmacion.setContentText("¿Desea eliminar "+ selectedItem.getValue()+"?");
-		
-		setEstiloAlert(confirmacion);
+
+		Image icon = new Image(new File(getClass().getResource("/imagen/preg-rosa.png").getPath()).toURI().toString());
+		setEstiloAlert(confirmacion,icon);
 
 		Optional<ButtonType> result = confirmacion.showAndWait();
 		if (result.get() == ButtonType.OK){
-			File fichero = new File("src/archivos/"+selectedItem.getValue());
+			File fichero = new File(getClass().getResource("/archivos/"+selectedItem.getValue()).getPath());
 		
 			if (fichero.delete()){
 				Alert alert = new Alert(AlertType.INFORMATION);
 				alert.setTitle("Éxito");
 				alert.setHeaderText(null);
 				alert.setContentText(selectedItem.getValue() + " se eliminó");
-				setEstiloAlert(alert);
+				Image iconAlert = new Image(new File(getClass().getResource("/imagen/alert-rosa.png").getPath()).toURI().toString());
+						
+				setEstiloAlert(alert,iconAlert);
 				alert.showAndWait();
 				inicializar();
 			}else{
@@ -166,7 +168,9 @@ public class InicioController implements Initializable {
 				alertError.setTitle("Error");
 				alertError.setHeaderText(null);
 				alertError.setContentText(selectedItem.getValue() +" no puede ser eliminado");
-				setEstiloAlert(alertError);
+				Image iconError = new Image(new File(getClass().getResource("/imagen/cruz-rosa.png").getPath()).toURI().toString());
+				setEstiloAlert(alertError, iconError);
+				
 				alertError.showAndWait();
 			}
 			
@@ -175,13 +179,17 @@ public class InicioController implements Initializable {
 		    // ... user chose CANCEL or closed the dialog
 		}
 	}
-	private void setEstiloAlert(Alert alert) {
+	private void setEstiloAlert(Alert alert, Image imagenIcon) {
 		Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-		Image image = new Image(new File("src/imagen/iconoRec.png").toURI().toString());
+		Image image = new Image(new File(getClass().getResource("/imagen/iconoRec.png").getPath()).toURI().toString());
+				
 		stage.getIcons().add(image);
 		DialogPane dialogPane = alert.getDialogPane();
 		dialogPane.getStylesheets().add(
-		   getClass().getResource("estilo.css").toExternalForm());
+		   getClass().getResource("estiloAlert.css").toExternalForm());
+		
+		ImageView icon = new ImageView(imagenIcon);
+		dialogPane.setGraphic(icon);
 		
 	}
 

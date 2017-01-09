@@ -40,9 +40,9 @@ public class GestionarArchivo {
 		}
 		return s;
 	}
-	public static File guardar(String texto, String nombre, String extension) throws IOException{
+	public File guardar(String texto, String nombre, String extension) throws IOException{
 		BufferedWriter bw;
-		File destino = new File(nombre+ extension);
+		File destino = new File(getClass().getResource(nombre+ extension).getPath());
 		bw = new BufferedWriter(new FileWriter(destino));
 		bw.write(texto);
 		bw.close();
