@@ -285,10 +285,19 @@ public class AnalisisController implements Initializable {
 			nodoCopia.setExpanded(nodo.isExpanded());
 			
 		}
-		if(nodosHijosSeleccionados(nodoCopia.getChildren())){
-			
-			itemFeature.setEstado("seleccionado");
-		}	
+		
+		if(nodoCopia.getChildren().size()>0){
+			if(nodosHijosSeleccionados(nodoCopia.getChildren())){
+				
+				itemFeature.setEstado("seleccionado");
+			}
+			else{
+				if(itemFeature.getEstado()=="noSeleccionado")
+					itemFeature.setEstado("noSeleccionado");
+				else
+					itemFeature.setEstado("indefinido");
+			}
+		}
 		if (itemFeature.getEstado()=="indefinido")
 			nodoCopia.setIndeterminate(true);
 		else if(itemFeature.getEstado()=="seleccionado")
@@ -332,7 +341,10 @@ public class AnalisisController implements Initializable {
 	
 		caracteristicasComunes.setText(""+analisis[1]);
 		caracteristicasMuertas.setText(""+analisis[2]);
-		configuracionesPosibles.setText(""+analisis[3]);
+		if(checkConfParcial.isSelected())
+			configuracionesPosibles.setText(sat.configuracionesPosibles("src/archivosSalida/salida"+archivoSeleccionado+".xml", mapaItemFeature));
+		else
+			configuracionesPosibles.setText(""+analisis[3]);
 		
 		//configuracionesPosibles.setText(new BDDReasoningExample().configuracionesPosibles("src/archivosSalida/salida"+archivoSeleccionado+".xml", mapaItemFeature));
 		
@@ -418,8 +430,10 @@ public class AnalisisController implements Initializable {
 				else if(itemFeature.getSeleccionado()=="seleccionado")
 					seleccionar+="\n	- "+itemFeature.getFeature();
 			}
-			texto+=("Características que deben seleccionarse:" + seleccionar);
-			texto+=("\nCaracterísticas que no deben seleccionarse:" + desmarcar);
+			if(seleccionar !="")
+				texto+=("Características que deben seleccionarse:" + seleccionar);
+			if(desmarcar !="")
+				texto+=("\nCaracterísticas que no deben seleccionarse:" + desmarcar);
 			
 		}
 		
@@ -441,12 +455,13 @@ public class AnalisisController implements Initializable {
 		if(checkConfParcial.isSelected()){
 			
 			labelConfParcial.setVisible(true);
-			labelParcial.setVisible(true);
-			//labelCantidadConf.setText("Cantidad de configuraciones");
+			//labelParcial.setVisible(true);
+			labelCantidadConf.setText("configuraciones parciales:");
 		}
 		else{	
 			labelConfParcial.setVisible(false);
 			labelParcial.setVisible(false);
+			labelCantidadConf.setText("configuraciones:");
 		}
 	}
 	@FXML
