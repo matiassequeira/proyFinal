@@ -25,9 +25,9 @@ public class RecurMenuConf {
 					}
 					
 					if(menu.getPrompt()!=null)
-						cadena= cadena + ":o " + string+"("+nivelMenuConfig+") "+'\n';//+'\n';
+						cadena= cadena + ":o " + string+"("+nivelMenuConfig+") (opcional)"+'\n';//+'\n';
 					else
-						cadena= cadena + ":m " + string+"("+nivelMenuConfig+") "+'\n';
+						cadena= cadena + ":m " + string+"("+nivelMenuConfig+") (común)"+'\n';
 					ClassesToSplot.mapConfigs_MenuConfigs.put(string, nivelMenuConfig);
 					
 					if(menu.getIf()!=null){

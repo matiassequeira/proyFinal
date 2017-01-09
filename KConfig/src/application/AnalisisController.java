@@ -322,7 +322,7 @@ public class AnalisisController implements Initializable {
 	@FXML
 	private void cargarDatos() {
 		SATReasoningExample sat= new SATReasoningExample();
-		int[] analisis=sat.run("/archivosSalida/salida"+archivoSeleccionado+".xml");
+		int[] analisis=sat.run("/archivosSalida/salida"+archivoSeleccionado+".xml", mapaItemFeature);
 		if(analisis[0]==1){
 			modeloInconsistente.setText("");
 			modeloConsistente.setText("Consistente");
@@ -354,7 +354,7 @@ public class AnalisisController implements Initializable {
 			System.out.println(clave);
 		}
 		habilitarSelect=false;
-		//actualizarArbol(rootItem);
+		actualizarArbol(rootItem);
 		habilitarSelect=true;
 		
 	}

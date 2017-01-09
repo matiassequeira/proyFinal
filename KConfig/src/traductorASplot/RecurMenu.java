@@ -18,7 +18,7 @@ public class RecurMenu {
 					cadena= cadena+'\t';
 				}
 				
-				cadena= cadena + ":m " + menu.getWordQuote() + "(" + nivelMenu +") " +'\n';
+				cadena= cadena + ":m " + menu.getWordQuote() + "(" + nivelMenu +") (común)" +'\n';
 				
 				cadena+= RecurConfig.recurConfigs(menu.getConfigs(), nivelMenu);
 				cadena+= RecurChoice.recurChoice(menu.getChoices(), nivelMenu);
