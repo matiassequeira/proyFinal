@@ -444,9 +444,17 @@ public class AnalisisController implements Initializable {
 		ArrayList<ItemFeature> choiceIncorrectas =verificarChoice(rootItem);
 		
 		if(choiceIncorrectas.size()!=0){
-			texto+="\nSe debe seleccionar una característica de las siguientes Choices:";
+			if (choiceIncorrectas.size()<1){
+				texto+="\nSe debe seleccionar al menos una característica de las siguiente Choice:";
+				for(ItemFeature choice: choiceIncorrectas){
+					texto+=("\n		- "+ choice.getFeature());
+				}
+			}
+			else{
+			texto+="\nSe debe seleccionar al menos una característica de las siguientes Choices:";
 			for(ItemFeature choice: choiceIncorrectas){
 				texto+=("\n		- "+ choice.getFeature());
+			}
 			}
 		}
 		
