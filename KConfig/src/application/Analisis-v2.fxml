@@ -157,8 +157,6 @@
                      </font>
                   </CheckBox>
                   <Button fx:id="inicio" layoutX="23.0" layoutY="22.0" mnemonicParsing="false" onAction="#inicio" styleClass="button-1" text="Inicio" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="23.0" />
-                  <Label layoutX="80.0" styleClass="label-rosa" text=":m características comunes   :o características opcionales" />
-                  <Label layoutX="35.0" styleClass="label-blanco" text="Nota:" />
                </children>
             </AnchorPane>
         </items>
